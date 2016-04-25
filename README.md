@@ -1,2 +1,3 @@
 # FIN5350
-Computational Financial Modeling
+
+This is a placeholder for Dr. Brough's Fall 2016 course on *Computational Financial Modeling*. 
