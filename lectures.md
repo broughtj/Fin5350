@@ -13,6 +13,7 @@ title: Computational Financial Modeling
 
 The following schedule is a statement of intent; content and order may change at any time.
 
+The course schedule is viewable as a Google Sheet [here](https://goo.gl/vK06bD).
 
 ---
 
