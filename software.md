@@ -53,4 +53,4 @@ For Finance 5350 we will learn modern document preparation tools:
 
 I will be giving just-in-time tutorials for each of these tools as we need them. 
 
-**NOT** Microsoft Word! Word is not allows in Finance 5350!
+**NOT** Microsoft Word! Word is not allowed in Finance 5350!
