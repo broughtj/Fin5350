@@ -18,15 +18,7 @@ The course schedule is viewable as a Google Sheet [here](https://goo.gl/vK06bD).
 ---
 
 1. **Introduction to Computational Financial Modeling** 
-    - lecture
 
-2. **Topic 2**
-	- lecture
-	- paper
-
-3. **Topic 3**
-	- lecture
-	- paper
 
 ---
 
