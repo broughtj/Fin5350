@@ -8,8 +8,6 @@ title: Computational Financial Modeling
 # Textbook and Reading Materials
 
 There is not a *required* textbook for this course. I will provide many notes, tutorials, and links to documentation.
-However, I do strongly suggest the following two books. I will be basing a good portion of my lecture material upon
-these sources:
 
 ## Learning Python
 
