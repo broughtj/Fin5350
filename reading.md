@@ -25,7 +25,7 @@ We will be following a combination of the following (*free*) Python tutorials:
 ### Beginning Python Books
 
 - [Python for the Absolute Beginner](https://www.amazon.com/Python-Programming-Absolute-Beginner-3rd/dp/1435455002)
-	+ While the subject of this game programming, it teaches real programming. I haven't yet found a better way for
+	+ While the subject of this book is game programming, it teaches real programming. I haven't yet found a better way for
 	  someone with no experience to learn to program. The author's approach to programming pedagogy is impressive.
 
 - [Learn Python the Hard Way](https://learnpythonthehardway.org/)
