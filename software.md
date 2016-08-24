@@ -46,10 +46,10 @@ I will also be using the Vim text editor. I suggest you do too. See here for a t
 
 For Finance 5350 we will learn modern document preparation tools:
 
-	- [Jupyter Notebook](http://jupyter.org/)
-	- [Pandoc](http://pandoc.org/)
-	- [LaTeX](https://www.latex-project.org/)
-	- [Markdown](https://daringfireball.net/projects/markdown/)
+- [Jupyter Notebook](http://jupyter.org/)
+- [Pandoc](http://pandoc.org/)
+- [LaTeX](https://www.latex-project.org/)
+- [Markdown](https://daringfireball.net/projects/markdown/)
 
 I will be giving just-in-time tutorials for each of these tools as we need them. 
 
