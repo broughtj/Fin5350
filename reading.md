@@ -18,7 +18,7 @@ We will be following a combination of the following (*free*) Python tutorials:
 - [A Whirlwind Tour of Python](http://www.oreilly.com/programming/free/a-whirlwind-tour-of-python.csp) by Jake VanderPlas. 
 - [The Official Python Tutorial](https://docs.python.org/3/tutorial/)
 - [Quantitative Economics](http://quant-econ.net/py/index.html)
-
+- [Introduction to Python for Econometrics, Statistics, and Data Analysis](https://www.kevinsheppard.com/images/0/09/Python_introduction.pdf) by Kevin Sheppard.
 
 ### Beginning Python Books
 
@@ -38,12 +38,23 @@ school. I will present some material based on them.
 
 Students will be assigned one or more papers to be read during the week prior to the lecture in which they will be discussed.
 
-### Additional References
+### Additional References Python  
 
-The following are not required, but I may present material based on them. 
+The following are not required, but I will present some material based on these readings in the financial computing portion of the lectures. 
 
 - [Python for Data Analysis](http://shop.oreilly.com/product/0636920023784.do?code=WKDATASC) by Wes McKinney
 - [Numerical Python](https://jrjohansson.github.io/numericalpython.html) by Robert Johansson. 
+
+
+### Additional Resources for Algorithms and Numerical Methods
+
+The following are not required, but I will present some material based on these readings in the computational finance portion of the lectures. 
+
+- [How to Count](https://www.manning.com/books/grokking-algorithms) by Aditya Bhargava.
+- [Grokking Algorithms](http://sites.fastspring.com/stevenf/product/howtocountpdf) by Steven Frank.
+- [Numerical Methods in Finance and Economics](http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471745030.html) by Paolo Brandimarte.
+- [Numerical Methods of Statistics 2nd Edition]() by John Monahan.
+
 
 
 
