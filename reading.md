@@ -44,7 +44,7 @@ The following are not required, but I will present some material based on these 
 
 - [Python for Data Analysis](http://shop.oreilly.com/product/0636920023784.do?code=WKDATASC) by Wes McKinney
 - [Numerical Python](https://jrjohansson.github.io/numericalpython.html) by Robert Johansson. 
-
+- [Cython A Guide for Python Programmers](http://shop.oreilly.com/product/0636920033431.do) by Kurt Smith. 
 
 ### Additional Resources for Algorithms and Numerical Methods
 
