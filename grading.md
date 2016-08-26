@@ -33,6 +33,8 @@ The final projects and essays will be submitted in multiple states:
 
 Dates for each of these will be discussed in class and updated on the class Google Sheet schedule.
 
+**Special Grading Policy:**
+
 I will allow students to hand in work multiple times until a student receives 100% on each assignment. I will keep
 track of the number of submissions and that will enter students' final grade. It is important to me that you actually
 acquire the skills outlined in the intended outcomes of the course!  
