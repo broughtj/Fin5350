@@ -50,10 +50,10 @@ The following are not required, but I will present some material based on these 
 
 The following are not required, but I will present some material based on these readings in the computational finance portion of the lectures. 
 
-- [How to Count](https://www.manning.com/books/grokking-algorithms) by Aditya Bhargava.
+- [How to Count](https://www.manning.com/books/grokking-algorithms) by Steven Frank.
 - [Grokking Algorithms](http://sites.fastspring.com/stevenf/product/howtocountpdf) by Steven Frank.
 - [Numerical Methods in Finance and Economics](http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471745030.html) by Paolo Brandimarte.
-- [Numerical Methods of Statistics 2nd Edition]() by John Monahan.
+- [Numerical Methods of Statistics 2nd Edition](goo.gl/RJrhoq) by John Monahan.
 
 
 
