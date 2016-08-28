@@ -50,5 +50,7 @@ The following outlines broadly the topics that we will cover in this course. The
 	- Bayesian estimation by simulation
 	- Bayesian multivarite time series models (var, vecm)
 	- Object-oriented econometric engine
+
+
 ---
 
