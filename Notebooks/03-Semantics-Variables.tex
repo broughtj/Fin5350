@@ -1,0 +1,299 @@
+\section{Basic Python Semantics: Variables and
+Objects}\label{basic-python-semantics-variables-and-objects}
+
+This section will begin to cover the basic semantics of the Python
+language. As opposed to the \emph{syntax} covered in the previous
+section, the \emph{semantics} of a language involve the meaning of the
+statements. As with our discussion of syntax, here we'll preview a few
+of the essential semantic constructions in Python to give you a better
+frame of reference for understanding the code in the following sections.
+
+This section will cover the semantics of \emph{variables} and
+\emph{objects}, which are the main ways you store, reference, and
+operate on data within a Python script.
+
+\subsection{Python Variables Are
+Pointers}\label{python-variables-are-pointers}
+
+Assigning variables in Python is as easy as putting a variable name to
+the left of the equals (\texttt{=}) sign:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# assign 4 to the variable x}
+\NormalTok{x }\OperatorTok{=} \DecValTok{4}
+\end{Highlighting}
+\end{Shaded}
+
+This may seem straightforward, but if you have the wrong mental model of
+what this operation does, the way Python works may seem confusing. We'll
+briefly dig into that here.
+
+In many programming languages, variables are best thought of as
+containers or buckets into which you put data. So in C, for example,
+when you write
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{// C code}
+\DataTypeTok{int} \NormalTok{x = }\DecValTok{4}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+you are essentially defining a ``memory bucket'' named \texttt{x}, and
+putting the value \texttt{4} into it. In Python, by contrast, variables
+are best thought of not as containers but as pointers. So in Python,
+when you write
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \DecValTok{4}
+\end{Highlighting}
+\end{Shaded}
+
+you are essentially defining a \emph{pointer} named \texttt{x} that
+points to some other bucket containing the value \texttt{4}. Note one
+consequence of this: because Python variables just point to various
+objects, there is no need to ``declare'' the variable, or even require
+the variable to always point to information of the same type! This is
+the sense in which people say Python is \emph{dynamically-typed}:
+variable names can point to objects of any type. So in Python, you can
+do things like this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \DecValTok{1}         \CommentTok{# x is an integer}
+\NormalTok{x }\OperatorTok{=} \StringTok{'hello'}   \CommentTok{# now x is a string}
+\NormalTok{x }\OperatorTok{=} \NormalTok{[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{] }\CommentTok{# now x is a list}
+\end{Highlighting}
+\end{Shaded}
+
+While users of statically-typed languages might miss the type-safety
+that comes with declarations like those found in C,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int} \NormalTok{x = }\DecValTok{4}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+this dynamic typing is one of the pieces that makes Python so quick to
+write and easy to read.
+
+There is a consequence of this ``variable as pointer'' approach that you
+need to be aware of. If we have two variable names pointing to the same
+\emph{mutable} object, then changing one will change the other as well!
+For example, let's create and modify a list:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \NormalTok{[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{]}
+\NormalTok{y }\OperatorTok{=} \NormalTok{x}
+\end{Highlighting}
+\end{Shaded}
+
+We've created two variables \texttt{x} and \texttt{y} which both point
+to the same object. Because of this, if we modify the list via one of
+its names, we'll see that the ``other'' list will be modified as well:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{print}\NormalTok{(y)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1, 2, 3]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x.append(}\DecValTok{4}\NormalTok{) }\CommentTok{# append 4 to the list pointed to by x}
+\BuiltInTok{print}\NormalTok{(y) }\CommentTok{# y's list is modified as well!}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1, 2, 3, 4]
+\end{verbatim}
+
+This behavior might seem confusing if you're wrongly thinking of
+variables as buckets that contain data. But if you're correctly thinking
+of variables as pointers to objects, then this behavior makes sense.
+
+Note also that if we use ``\texttt{=}'' to assign another value to
+\texttt{x}, this will not affect the value of \texttt{y} -- assignment
+is simply a change of what object the variable points to:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \StringTok{'something else'}
+\BuiltInTok{print}\NormalTok{(y)  }\CommentTok{# y is unchanged}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1, 2, 3, 4]
+\end{verbatim}
+
+Again, this makes perfect sense if you think of \texttt{x} and
+\texttt{y} as pointers, and the ``\texttt{=}'' operator as an operation
+that changes what the name points to.
+
+You might wonder whether this pointer idea makes arithmetic operations
+in Python difficult to track, but Python is set up so that this is not
+an issue. Numbers, strings, and other \emph{simple types} are immutable:
+you can't change their value -- you can only change what values the
+variables point to. So, for example, it's perfectly safe to do
+operations like the following:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \DecValTok{10}
+\NormalTok{y }\OperatorTok{=} \NormalTok{x}
+\NormalTok{x }\OperatorTok{+=} \DecValTok{5}  \CommentTok{# add 5 to x's value, and assign it to x}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"x ="}\NormalTok{, x)}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"y ="}\NormalTok{, y)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+x = 15
+y = 10
+\end{verbatim}
+
+When we call \texttt{x\ +=\ 5}, we are not modifying the value of the
+\texttt{5} object pointed to by \texttt{x}, but rather we are changing
+the object to which \texttt{x} points. For this reason, the value of
+\texttt{y} is not affected by the operation.
+
+\subsection{Everything Is an Object}\label{everything-is-an-object}
+
+Python is an object-oriented programming language, and in Python
+everything is an object.
+
+Let's flesh-out what this means. Earlier we saw that variables are
+simply pointers, and the variable names themselves have no attached type
+information. This leads some to claim erroneously that Python is a
+type-free language. But this is not the case! Consider the following:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \DecValTok{4}
+\BuiltInTok{type}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+int
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \StringTok{'hello'}
+\BuiltInTok{type}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+str
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \FloatTok{3.14159}
+\BuiltInTok{type}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+float
+\end{verbatim}
+
+Python has types; however, the types are linked not to the variable
+names but \emph{to the objects themselves}.
+
+In object-oriented programming languages like Python, an \emph{object}
+is an entity that contains data along with associated metadata and/or
+functionality. In Python everything is an object, which means every
+entity has some metadata (called \emph{attributes}) and associated
+functionality (called \emph{methods}). These attributes and methods are
+accessed via the dot syntax.
+
+For example, before we saw that lists have an \texttt{append} method,
+which adds an item to the list, and is accessed via the dot
+(``\texttt{.}'') syntax:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{L }\OperatorTok{=} \NormalTok{[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{]}
+\NormalTok{L.append(}\DecValTok{100}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(L)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1, 2, 3, 100]
+\end{verbatim}
+
+While it might be expected for compound objects like lists to have
+attributes and methods, what is sometimes unexpected is that in Python
+even simple types have attached attributes and methods. For example,
+numerical types have a \texttt{real} and \texttt{imag} attribute that
+returns the real and imaginary part of the value, if viewed as a complex
+number:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \FloatTok{4.5}
+\BuiltInTok{print}\NormalTok{(x.real, }\StringTok{"+"}\NormalTok{, x.imag, }\StringTok{'i'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+4.5 + 0.0 i
+\end{verbatim}
+
+Methods are like attributes, except they are functions that you can call
+using opening and closing parentheses. For example, floating point
+numbers have a method called \texttt{is\_integer} that checks whether
+the value is an integer:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \FloatTok{4.5}
+\NormalTok{x.is_integer()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+False
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OperatorTok{=} \FloatTok{4.0}
+\NormalTok{x.is_integer()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+True
+\end{verbatim}
+
+When we say that everything in Python is an object, we really mean that
+\emph{everything} is an object -- even the attributes and methods of
+objects are themselves objects with their own \texttt{type} information:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{type}\NormalTok{(x.is_integer)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+builtin_function_or_method
+\end{verbatim}
+
+We'll find that the everything-is-object design choice of Python allows
+for some very convenient language constructs.
