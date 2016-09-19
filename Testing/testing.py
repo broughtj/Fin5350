@@ -1,1 +1,0 @@
-print("Warm greeting!")
