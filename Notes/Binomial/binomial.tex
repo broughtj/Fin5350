@@ -1,0 +1,175 @@
+\documentclass[11pt]{article}
+
+\setlength{\parindent}{0in}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{array,multirow}
+\usepackage{tikz}
+
+\begin{document}
+
+\textbf{Review Notes for Binomial Option Pricing} \\
+\textbf{Finance 5350: Computational Financial Modeling} \\
+\textbf{Fall Semester 2016} \\
+\vspace{5mm}
+
+\bigskip
+What follows is a derivation of the single--period Binomial option pricing formula.
+This derivation is slightly different than the one found in your textbook.  I use different variable names than the text in order
+to be more consistent with the Black--Scholes model.
+
+
+\vspace{5mm}
+To fix ideas, recall that our simple assumption of binomial prices leads to two
+binomial trees: one for the stock price, and one for the option price:
+
+\vspace{10mm}
+\begin{center}
+\tikzstyle{bag} = [text width=2em, text centered]
+\tikzstyle{end} = []
+\begin{tikzpicture}[sloped]
+  \node (a) at ( 0,0) [bag] {$S_{0}$};
+  \node (b) at ( 4,-1.5) [bag] {$dS_{0}$};
+  \node (c) at ( 4,1.5) [bag] {$uS_{0}$};
+  \draw [->] (a) to node [below] {} (b);
+  \draw [->] (a) to node [above] {} (c);
+\end{tikzpicture}
+\end{center}
+
+\vspace{10mm}
+\begin{center}
+\tikzstyle{bag} = [text width=2em, text centered]
+\tikzstyle{end} = []
+\begin{tikzpicture}[sloped]
+  \node (a) at ( 0,0) [bag] {$C_{0}$};
+  \node (b) at ( 4,-1.5) [bag] {$C_{d}$};
+  \node (c) at ( 4,1.5) [bag] {$C_{u}$};
+  \draw [->] (a) to node [below] {} (b);
+  \draw [->] (a) to node [above] {} (c);
+\end{tikzpicture}
+\end{center}
+
+\medskip
+The basic idea of the Binomial Option Pricing Model is to set up a replicating portfolio to synthetically
+replicate the European call option payoff. This lead to a simple equation:
+
+\medskip
+\begin{equation*}
+C_{0} = \Delta S + B
+\end{equation*}
+
+\medskip
+where $\Delta$ and $B$ are chosen with care so as to perfectly replicate the call option\footnote{The same logic
+applies for put options, so we can talk only about call options without loss of generality.} This begs the
+question: just how are $\Delta$ and $B$ chosen? We can solve for these parameters by noting that the following
+must hold:
+
+\medskip
+\begin{eqnarray*}
+ C_{u} &=& \Delta \times u S + B e^{rh} \\
+ C_{d} &=& \Delta \times d S + B e^{rh} \\
+\end{eqnarray*}
+
+\medskip
+We can now see how to solve for these parameters. First we will solve for $B e^{rh}$ in the second equation
+as follows:
+
+\medskip
+\begin{equation*}
+B e^{rh} = C_{d} - \Delta \times d S
+\end{equation*}
+
+\medskip
+and plug it into the first for $B e^{rh}$ as follows:
+
+\medskip
+\begin{equation*}
+C_{u} = \Delta \times u S + C_{d} - \Delta d S
+\end{equation*}
+
+\medskip
+We notice that $B$ has now disappeared from the first equation and we can solve for $\Delta$ as follows:
+
+\begin{equation*}
+\Delta S (u - d) = C_{u} - C_{d}
+\end{equation*}
+
+\medskip
+which leads to:
+
+\medskip
+\begin{equation*}
+\Delta = \frac{C_{u} - C_{d}}{S(u-d)}
+\end{equation*}
+
+\medskip
+So now we have solved for the correct value of $\Delta$ that gives us the number of shares we need to hold
+in our portfolio to synthetically replicate the call option.  We can now plug this $\Delta$ into
+$B e^{rh} = C_{d} - \Delta \times dS$ to get an equation, for which the only unknown is $B$ and solve for it.
+We do this as follows:
+
+\medskip
+\begin{equation*}
+B e^{rh} = C_{d} - \left(\frac{C_{u} - C_{d}}{S(u-d)}\right) \times d S
+\end{equation*}
+
+\medskip
+which we can rearrange as:
+
+\medskip
+\begin{eqnarray*}
+B e^{rh} &=& C_{d} \times \frac{(u-d)}{(u-d)} - \left(\frac{d C_{u} - d C_{d}}{u-d}\right) \\
+         &=& \frac{u C_{d} - d C_{d} - d C_{u} + d C_{d}}{u-d} \\
+         &=& \frac{u C_{d} - d C_{u}}{u-d}
+\end{eqnarray*}
+
+\medskip
+Finally, we can multiply both sides of the equation by $e^{-rh}$ to get the following:
+
+\medskip
+\begin{equation*}
+B = e^{-rh} \left( \frac{u C_{d} - d C_{u}}{u-d} \right)
+\end{equation*}
+
+\medskip
+We now know what the values of $\Delta$ and $B$ need to be to perfectly replicate the call option. Since
+we can observe these quantities, we can figure out by applying the \textbf{law of one price} (or in
+other words by assuming no arbitrage opportunities exist) the equilibrium price of the call option
+now, or $C_{0}$.
+
+\medskip
+We simply plug in for $\Delta$ and $B$ in the following:
+
+\begin{eqnarray*}
+C_{0} &=& \Delta \times S + B \\
+      &=& \left( \frac{C_{u} - C_{d}}{S(u-d)} \right) \times S + e^{-rh} \left( \frac{u C_{d} - d C_{u}}{u-d} \right) \\
+\end{eqnarray*}
+
+\medskip
+Essentially we could stop here.  We are done.  We have derived the single--period Binomial Option Pricing Model. But
+we will keep working to rearrange this equation to express it in such a manner to get even more deep intuition from it.
+We can rewrite the model as follows:
+
+\medskip
+\begin{eqnarray*}
+C_{0} &=& \left( \frac{C_{u} - C_{d}}{S(u-d)} \right) \times S + e^{-rh} \left( \frac{u C_{d} - d C_{u}}{u-d} \right) \\
+      &=& \left( \frac{C_{u} - C_{d}}{(u-d)} \right) + e^{-rh} \left( \frac{u C_{d} - d C_{u}}{u-d} \right) \\
+      &=& e^{-rh} \left( \frac{e^{rh} C_{u} - e^{rh} C_{d} + u C_{d} - d C_{u}}{u-d} \right) \\
+      &=& e^{-rh} \left(C_{u} \frac{e^{rh} - d}{u-d} + C_{d} \frac{u - e^{rh}}{u-d} \right)
+\end{eqnarray*}
+
+\medskip
+Finally, we can let $p_{u}^{\ast} = \frac{e^{rh} - d}{u-d}$ and $p_{d}^{\ast} = \frac{u - e^{rh}}{u-d}$. Now we can write the
+model simply as:
+
+\medskip
+\begin{equation*}
+C_{0} = e^{-rh} \left[ C_{u} p_{u}^{\ast} + C_{d} p_{d}^{\ast} \right]
+\end{equation*}
+
+
+\end{document}
