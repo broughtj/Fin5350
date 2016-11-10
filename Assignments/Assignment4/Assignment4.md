@@ -13,7 +13,7 @@ You should have already forked the `dylan` module and have a locally cloned copy
 
 The first step is to create a class that inherits from the `PricingEngine` abstract based class as follows:
 
-```{python}
+```python
 class AnalyticEngine(PricingEngine):
 	def __init__(self, payoff_type, pricer):
 		self.__payoff_type = payoff_type
