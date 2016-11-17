@@ -148,9 +148,9 @@ dv_{t} = \kappa [\theta - v_{t}] dt + \sigma \sqrt{v_{t}} d z_{2,t}
 Call(S,v,t) = S_{t} P_{1} - K P(t,T) P_{2}
 \]</span> where</p>
 <ul>
-<li><p>$S_{t} = $ the spot price of the asset</p></li>
-<li><p>$K = $ the strike price of the option</p></li>
-<li><p>$P(t,T) = $ a discount factor from time <span class="math inline">\(t\)</span> to time <span class="math inline">\(T\)</span></p></li>
+<li><p><span class="math inline">\(S_{t}\)</span> is the spot price of the asset</p></li>
+<li><p><span class="math inline">\(K\)</span> is the strike price of the option</p></li>
+<li><p><span class="math inline">\(P(t,T)\)</span> is a discount factor from time <span class="math inline">\(t\)</span> to time <span class="math inline">\(T\)</span></p></li>
 </ul>
 <p>If we assume a constant rate of interest <span class="math inline">\(r\)</span>, we can write this as</p>
 <p><span class="math display">\[
@@ -159,10 +159,10 @@ P(t,T) = \exp{-r \times (T - t)}
 <p><span class="math inline">\(P_{1}\)</span> and <span class="math inline">\(P_{2}\)</span> are the probabilities that the call option will expire in-the-money, conditional on the log stock price <span class="math inline">\(x_{t} = ln[S_{t}]\)</span>, and on the volatility <span class="math inline">\(v_{t}\)</span>, each at time <span class="math inline">\(t\)</span>.</p>
 <p>The risk-neutral versions are given by:</p>
 <p><span class="math display">\[
-\begin{array}
+\begin{aligned}
 dx_{t} &amp;= [r -\frac{1}{2}v_{t}]dt + \sqrt{v_{t}} dz_{1,t}^{\ast} \\
 dv_{t} &amp;= \kappa[\theta - v_{t}]dt + \sigma \sqrt{v_{t}} dz_{2,t}^{\ast}
-\end{array}
+\end{aligned}
 \]</span></p>
 </div>
 
