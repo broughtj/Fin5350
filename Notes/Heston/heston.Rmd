@@ -1,0 +1,67 @@
+---
+title: "The Heston Model"
+author: "Tyler J. Brough"
+date: "November 17, 2016"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## The Heston Model
+
+The Heston (1993) model assumes the underlying stock price follows the diffusion process given by:
+
+$$
+dS_{t} = \mu S_{t} dt + \sqrt{v_{t}} S_{t} dz_{1,t}
+$$
+where $\mu$ is the drift parameter, and $z_{1,t}$ is a standard Wiener process. The volatility $\sqrt{v_{t}}$ itself follows a diffusion process:
+
+$$
+d\sqrt{v_{t}} = -\beta \sqrt{v_{t}} dt + \delta dz_{2,t}
+$$
+
+where $z_{2,t}$ is a Wiener process, and $\rho$ defines the correlation between $z_{1,t}$ and $z{2,t}$. 
+
+Using Ito's lemma the variance process can be written as an Orstein-Uhlenbeck (mean-reverting) process:
+
+$$
+dv_{t} = \kappa [\theta - v_{t}] dt + \sigma \sqrt{v_{t}} d z_{2,t}
+$$
+
+where
+
+- $\theta = $ the long-run mean of the variance
+
+- $\kappa = $ a mean reversion parameter 
+
+- $\sigma = $ the volatility of volatility
+
+Given this set up the Heston (1993) gives the price of the call option as:
+
+$$
+Call(S,v,t) = S_{t} P_{1} - K P(t,T) P_{2}
+$$
+where
+
+- $S_{t} = $ the spot price of the asset
+
+- $K = $ the strike price of the option
+
+- $P(t,T) = $ a discount factor from time $t$ to time $T$
+
+If we assume a constant rate of interest $r$, we can write this as
+
+$$
+P(t,T) = \exp{-r \times (T - t)}
+$$
+
+$P_{1}$ and $P_{2}$ are the probabilities that the call option will expire in-the-money, conditional on the log stock price $x_{t} = ln[S_{t}]$, and on the volatility $v_{t}$, each at time $t$. 
+
+The risk-neutral versions are given by:
+
+$$
+\begin{array}
+dx_{t} &= [r -\frac{1}{2}v_{t}]dt + \sqrt{v_{t}} dz_{1,t}^{\ast} \\
+dv_{t} &= \kappa[\theta - v_{t}]dt + \sigma \sqrt{v_{t}} dz_{2,t}^{\ast}
+\end{array}
+$$
