@@ -2,9 +2,7 @@
 title: "The Heston Model"
 author: "Tyler J. Brough"
 date: "November 17, 2016"
-output:
-  pdf_document: default
-  html_document: default
+output: html_document
 ---
 
 ## The Heston Model
