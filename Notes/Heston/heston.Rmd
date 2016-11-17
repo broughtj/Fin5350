@@ -66,3 +66,22 @@ dx_{t} &= [r -\frac{1}{2}v_{t}]dt + \sqrt{v_{t}} dz_{1,t}^{\ast} \\
 dv_{t} &= \kappa[\theta - v_{t}]dt + \sigma \sqrt{v_{t}} dz_{2,t}^{\ast}
 \end{aligned}
 $$
+
+In order to simulate from these equations we require a discretized form of the equations. It turns out that there are
+not closed-form solutions for these particular two equations. It is also the case that the standard Euler discretization
+technique is possible, but in the case of the variance equation will produce draws that are negative values of
+volatilitiy. There are a number of ways to deal with this. The one that we select here is to work with the natural
+logarithm of the variance. Using Ito's lemma again we can get the dynamics of $\ln{(v_{t})}$ as follows:
+
+$$
+dln(v_{t}) = \frac{1}{v_{t}} ( \kappa (\theta - v_{t}) - \frac{1}{2} \sigma^{2}) dt + \sigma \frac{1}{\sqrt{v_{t}}
+dz_{2,t}^{\ast}
+$$
+
+When the Euler discretization scheme is applied we arrive at the following discrete time solutions:
+
+$$
+\begin{aligned}
+\ln{S_{t + \Delta t}} &= \ln{S_{t}} + (r - \frac{1}{2} v_{t}) \Delta t + \sqrt{v_{t}} \sqrt{\Delta t} \varepsilon_{S,t+1}\\
+\ln{v_{t + \Delta t}} &= \ln{v_{t}} + \frac{1}{v_{t}} (\kappa (\theta - v_{t}) - \frac{1}{2} \sigma^{2}) \Delta t + \sigma \frac{1}{\sqrt{v_{t}}} \sqrt{\Delta t} \varepsilon_{v,t+1}
+$$
