@@ -2,7 +2,7 @@
 title: "The Heston Model"
 author: "Tyler J. Brough"
 date: "November 17, 2016"
-output: html_document
+output: pdf_document
 ---
 
 ## The Heston Model
@@ -28,11 +28,11 @@ $$
 
 where
 
-- $\theta = $ the long-run mean of the variance
+- $\theta$ is the long-run mean of the variance
 
-- $\kappa = $ a mean reversion parameter 
+- $\kappa$ is a mean reversion parameter 
 
-- $\sigma = $ the volatility of volatility
+- $\sigma$ is the volatility of volatility
 
 Given this set up the Heston (1993) gives the price of the call option as:
 
@@ -58,8 +58,8 @@ $P_{1}$ and $P_{2}$ are the probabilities that the call option will expire in-th
 The risk-neutral versions are given by:
 
 $$
-\begin{array}
+\begin{aligned}
 dx_{t} &= [r -\frac{1}{2}v_{t}]dt + \sqrt{v_{t}} dz_{1,t}^{\ast} \\
 dv_{t} &= \kappa[\theta - v_{t}]dt + \sigma \sqrt{v_{t}} dz_{2,t}^{\ast}
-\end{array}
+\end{aligned}
 $$
