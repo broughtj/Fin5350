@@ -95,6 +95,7 @@ button.code-folding-btn:focus {
 </style>
 
 
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
@@ -160,10 +161,37 @@ P(t,T) = \exp{-r \times (T - t)}
 <p>The risk-neutral versions are given by:</p>
 <p><span class="math display">\[
 \begin{aligned}
-dx_{t} &amp;= [r -\frac{1}{2}v_{t}]dt + \sqrt{v_{t}} dz_{1,t}^{\ast} \\
-dv_{t} &amp;= \kappa[\theta - v_{t}]dt + \sigma \sqrt{v_{t}} dz_{2,t}^{\ast}
+dx_{t} &amp;= \left[r -\frac{1}{2}v_{t} \right] dt + \sqrt{v_{t}} dz_{1,t}^{\ast} \\
+dv_{t} &amp;= \kappa \left[\theta - v_{t} \right] dt + \sigma \sqrt{v_{t}} dz_{2,t}^{\ast}
 \end{aligned}
 \]</span></p>
+<p>In order to simulate from these equations we require a discretized form of the equations. It turns out that there are not closed-form solutions for these particular two equations. It is also the case that the standard Euler discretization technique is possible, but in the case of the variance equation will produce draws that are negative values of volatilitiy. There are a number of ways to deal with this. The one that we select here is to work with the natural logarithm of the variance. Using Ito’s lemma again we can get the dynamics of <span class="math inline">\(\ln{(v_{t})}\)</span> as follows:</p>
+<p><span class="math display">\[
+d \ln{(v_{t})} = \frac{1}{v_{t}} ( \kappa (\theta - v_{t}) - \frac{1}{2} \sigma^{2}) dt + \sigma \frac{1}{\sqrt{v_{t}}} dz_{2,t}^{\ast}
+\]</span></p>
+<p>When the Euler discretization scheme is applied we arrive at the following discrete time solutions:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\ln{(S_{t + \Delta t})} &amp;= \ln{(S_{t})} + \left(r - \frac{1}{2} v_{t}\right) \Delta t + \sqrt{v_{t}} \sqrt{\Delta t} \varepsilon_{S,t+1}\\
+\ln{(v_{t + \Delta t})} &amp;= \ln{(v_{t})} + \frac{1}{v_{t}} \left(\kappa (\theta - v_{t}) - \frac{1}{2} \sigma^{2}\right) \Delta t + \sigma \frac{1}{\sqrt{v_{t}}} \sqrt{\Delta t} \varepsilon_{v,t+1}
+\end{aligned}
+\]</span> Shocks to the volatility, <span class="math inline">\(\varepsilon_{v,t+1}\)</span> are correlated with the shocks to the stock price process, <span class="math inline">\(\varepsilon_{S,t+1}\)</span>. This is denoted by <span class="math inline">\(\rho = Corr(\varepsilon_{v,t+1}, \varepsilon_{S,t+1})\)</span> and the relationship between shocks can be written:</p>
+<p><span class="math display">\[
+\varepsilon_{v,t+1} = \rho \varepsilon_{S,t+1} + \sqrt{1 - \rho^{2}} \varepsilon_{t+1}
+\]</span></p>
+<p>where the <span class="math inline">\(\varepsilon_{t+1}\)</span> are iid Standard Normal variables that each have zero correlation with <span class="math inline">\(\varepsilon_{S,t+1}\)</span>.</p>
+<p>We now illustrate how to simulate from the processes in Python for the following parameter values (these are taken from the original paper by Heston (1993)):</p>
+<ul>
+<li><p><span class="math inline">\(S = 100\)</span></p></li>
+<li><p><span class="math inline">\(K = 100\)</span></p></li>
+<li><p><span class="math inline">\(r = 0.0\)</span></p></li>
+<li><p><span class="math inline">\(\tau = 180/365 = 0.5\)</span></p></li>
+<li><p><span class="math inline">\(v = 0.01\)</span></p></li>
+<li><p><span class="math inline">\(\rho = 0.0\)</span></p></li>
+<li><p><span class="math inline">\(\kappa = 2.0\)</span></p></li>
+<li><p><span class="math inline">\(\theta = 0.01\)</span></p></li>
+<li><p><span class="math inline">\(\sigma = 0.10\)</span></p></li>
+</ul>
 </div>
 
 
@@ -177,6 +205,7 @@ dv_{t} &amp;= \kappa[\theta - v_{t}]dt + \sigma \sqrt{v_{t}} dz_{2,t}^{\ast}
 $(document).ready(function () {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 });
+
 
 </script>
 

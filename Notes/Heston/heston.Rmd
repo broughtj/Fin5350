@@ -3,9 +3,8 @@ title: "The Heston Model"
 author: "Tyler J. Brough"
 date: "November 17, 2016"
 output:
-  pdf_document: default
   html_document: default
-
+  pdf_document: default
 ---
 
 ## The Heston Model
@@ -62,8 +61,8 @@ The risk-neutral versions are given by:
 
 $$
 \begin{aligned}
-dx_{t} &= [r -\frac{1}{2}v_{t}]dt + \sqrt{v_{t}} dz_{1,t}^{\ast} \\
-dv_{t} &= \kappa[\theta - v_{t}]dt + \sigma \sqrt{v_{t}} dz_{2,t}^{\ast}
+dx_{t} &= \left[r -\frac{1}{2}v_{t} \right] dt + \sqrt{v_{t}} dz_{1,t}^{\ast} \\
+dv_{t} &= \kappa \left[\theta - v_{t} \right] dt + \sigma \sqrt{v_{t}} dz_{2,t}^{\ast}
 \end{aligned}
 $$
 
@@ -74,14 +73,63 @@ volatilitiy. There are a number of ways to deal with this. The one that we selec
 logarithm of the variance. Using Ito's lemma again we can get the dynamics of $\ln{(v_{t})}$ as follows:
 
 $$
-dln(v_{t}) = \frac{1}{v_{t}} ( \kappa (\theta - v_{t}) - \frac{1}{2} \sigma^{2}) dt + \sigma \frac{1}{\sqrt{v_{t}}
-dz_{2,t}^{\ast}
+d \ln{(v_{t})} = \frac{1}{v_{t}} ( \kappa (\theta - v_{t}) - \frac{1}{2} \sigma^{2}) dt + \sigma \frac{1}{\sqrt{v_{t}}} dz_{2,t}^{\ast}
 $$
 
 When the Euler discretization scheme is applied we arrive at the following discrete time solutions:
 
 $$
 \begin{aligned}
-\ln{S_{t + \Delta t}} &= \ln{S_{t}} + (r - \frac{1}{2} v_{t}) \Delta t + \sqrt{v_{t}} \sqrt{\Delta t} \varepsilon_{S,t+1}\\
-\ln{v_{t + \Delta t}} &= \ln{v_{t}} + \frac{1}{v_{t}} (\kappa (\theta - v_{t}) - \frac{1}{2} \sigma^{2}) \Delta t + \sigma \frac{1}{\sqrt{v_{t}}} \sqrt{\Delta t} \varepsilon_{v,t+1}
+\ln{(S_{t + \Delta t})} &= \ln{(S_{t})} + \left(r - \frac{1}{2} v_{t}\right) \Delta t + \sqrt{v_{t}} \sqrt{\Delta t} \varepsilon_{S,t+1}\\
+\ln{(v_{t + \Delta t})} &= \ln{(v_{t})} + \frac{1}{v_{t}} \left(\kappa (\theta - v_{t}) - \frac{1}{2} \sigma^{2}\right) \Delta t + \sigma \frac{1}{\sqrt{v_{t}}} \sqrt{\Delta t} \varepsilon_{v,t+1}
+\end{aligned}
 $$
+Shocks to the volatility, $\varepsilon_{v,t+1}$ are correlated with the shocks to the stock price process, $\varepsilon_{S,t+1}$. This is denoted by $\rho = Corr(\varepsilon_{v,t+1}, \varepsilon_{S,t+1})$ and the relationship between shocks can be written:
+
+$$
+\varepsilon_{v,t+1} = \rho \varepsilon_{S,t+1} + \sqrt{1 - \rho^{2}} \varepsilon_{t+1}
+$$
+
+where the $\varepsilon_{t+1}$ are iid Standard Normal variables that each have zero correlation with $\varepsilon_{S,t+1}$. 
+
+We now illustrate how to simulate from the processes in Python for the following parameter values (these are taken from the original paper by Heston (1993)):
+
+- $S = 100$
+
+- $K = 100$
+
+- $r = 0.0$
+
+- $\tau = 180/365 = 0.5$
+
+- $v = 0.01$
+
+- $\rho = 0.0$
+
+- $\kappa = 2.0$
+
+- $\theta = 0.01$
+
+- $\sigma = 0.10$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
