@@ -5,8 +5,8 @@
 ## Course Information
 
 - Course Dates: August 28 - December 15
-- Course Time: MW 3:45 - 5:00 PM
-- Course Room: Huntsman Hall 370
+- Course Time: MW 3:30 - 5:15 PM
+- Course Room: Huntsman Hall 380
 - [Slack Channel]()
 - [Course Canvas]()
 - [Course Homepage]()
@@ -49,6 +49,38 @@
 #### Learning Emacs Org-Mode
 
 ### Schedule of Topics
+
+This is a list of topics that will be covered in this course (not necessarily in order):
+
+- Python Basics
+	* IPython Notebooks
+	* Data Types
+	* Object References
+	* Collection Types
+	* Logical Operations
+	* Control Flow Statements
+	* Arithmetic Operations
+	* Input/Output
+	* Writing Functions
+	* Scipy & Numpy 
+	* Packages and Modules
+- Cython Basics
+	* C/C++ Data Types
+	* def, cdef, and cpdef
+	* Typed Memoryviews & Numpy
+	* Cython Extension Types
+- Software Design
+	* Object-Oriented Programming
+	* Design Patterns
+- Monte Carlo Simulation
+	* Monte Carlo Integration
+	* Simulating Supply 
+	* Monte Carlo Option Pricing
+- Time Series Bootstrap
+	* Politis and Romano Stationary Bootstrap
+- Econometric Models
+	* Linear Regression
+	* Multivarite Time Series (VAR, VECM)
 
 <br>
 
