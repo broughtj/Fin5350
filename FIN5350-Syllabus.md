@@ -20,13 +20,26 @@
 - Phone: 435-797-2369 (nb: I check slack before voice mail)
 - Email: tyler dot brough at aggiemail dot usu dot edu
 
+
 ## Syllabus
 
 ### Course Description
 
-
+This is a course on computational financial modeling using the Python programming language. Topics in computational
+finance as well as financial computing will be covered. Students will learn computational modeling with applications to
+option pricing and financial econometrics. Foundational concepts from computer science and software engineering will be
+introduced. Upon completion of the course students will have a new analytical framework for thinking about financial
+problem solving as well as a deep practical skill set in computational modeling.
 
 ### Prerequisites
+
+- Statistics 2000/2300 Business Statistics 
+- Math 1100 or 1210 Calculus
+- Finance 3200 and 3400
+- Or approval of the professor
+
+Students must be prepared to program in Python for computational assignments. No prior programming experience is
+required! 
 
 
 ### Textbooks
@@ -78,15 +91,55 @@ Dates for each of these stages will be discussed in class and updated on the Goo
 
 ### Software 
 
+Finance 5350 is taught using Python and the *Scientific Stack*, a set of core scientific computing packages written and maintained by various third parties.
+
 #### Anaconda Python 3 Edition
+
+The main focus of the course is the Python programming for financial modeling. We will be using the Anaconda Python
+Distribution, which is free:
+
+- [Anaconda Python Distribution](https://www.continuum.io/downloads).
+
+I will be giving detailed instructions on how to install and get Python running on your system. 
+
+<br>
+
+We will heavily use both `git` and [github](htts://github.io). Installation instructions and some tutorials are given on a separate page.
+
+<br>
+
+For Finance 5350 we will learn modern document preparation tools:
+
+- [Jupyter Notebook](http://jupyter.org/)
+- [Pandoc](http://pandoc.org/)
+- [LaTeX](https://www.latex-project.org/)
+- [Markdown](https://daringfireball.net/projects/markdown/)
+
+I will be giving just-in-time tutorials for each of these tools as we need them. 
+
+**NOT** Microsoft Word! Word is not allowed in Finance 5350!
 
 #### Slack
 
+All class communication will take place using [Slack](https://slack.com), a messaging system that replaces email. Students will be invited to the [Fin 5350 Slack channel](https://fin5350.slack.com) prior to the first week of class.
+
+Clients for most computing and mobile platforms can be [downloaded from the Slack website](https://slack.com/downloads), or students may use the web client via a desktop browser.
+
 ### Extra Credit
+
+I will allow for the following extra credit assignments. These are not mutually exclusive.
 
 #### Keeping a Detailed Bullet Journal
 
+I will give extra credit for students who keep a [bullet journal](http://bulletjournal.com/) throughout the semester. You can watch a video on this on [youtube](https://youtu.be/fm15cmYU0IM). You can search social media with the hashtag \#BulletJournal for ideas and suggestions. 
+
+The idea is to record your study and work for ECN 4330, but I would encourage you to use it broadly. I will require that you turn in a brief writeup about the experience and also at least two posts on social media with hashtags \#ECN4330 and \#BulletJournal. 
+
+While you will see very expensive notebooks used online, it could be done for just a few dollars with [this Staples Composition Notebook](https://goo.gl/GbrXUf). But feel free to use whatever you want and to personalize it to your heart's content. 
+
 #### Learning Emacs Org-Mode
+
+I will also offer similar extra credit for those who learn to use [Org-Mode](http://orgmode.org/) in the Emacs text editor for their work in this class.
 
 ### Schedule of Topics
 
