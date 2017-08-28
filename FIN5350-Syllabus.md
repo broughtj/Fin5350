@@ -50,14 +50,20 @@ None of these textbooks are required in the strict sense, but I would suggest th
 - [Programming in Python 3: A Complete Introduction to the Python Language (2nd Edition)](https://goo.gl/ms5Wgx)
 - [Cython: A Guide for Python Programmers](https://goo.gl/xD1YC2)
 
+<br>
+
 Philosophically I will be pulling from Zed Shaw's approach (though I will cheat a bit):
 
 - [Learn Python the Hard Way](https://learncodethehardway.org/python/)
+
+<br>
 
 I can also highly suggest for serious students (and I may pull some material) the following:
 
 - [Python in Practice](https://goo.gl/mGq3tB)
 - [Numerical Python: A Practical Techniques Approach for Industry](https://goo.gl/2qFBqm)
+
+<br>
 
 As you can see, there is no shortage of good books on programming Python, which is one of its great strengths. 
 
@@ -100,6 +106,8 @@ Distribution, which is free:
 
 - [Anaconda Python Distribution](https://www.continuum.io/downloads).
 
+<br>
+
 I will be giving detailed instructions on how to install and get Python running on your system. 
 
 <br>
@@ -114,6 +122,8 @@ For Finance 5350 we will learn modern document preparation tools:
 - [Pandoc](http://pandoc.org/)
 - [LaTeX](https://www.latex-project.org/)
 - [Markdown](https://daringfireball.net/projects/markdown/)
+
+<br>
 
 I will be giving just-in-time tutorials for each of these tools as we need them. 
 
