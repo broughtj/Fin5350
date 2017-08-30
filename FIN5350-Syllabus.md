@@ -10,7 +10,7 @@
 - [Slack Channel]()
 - [Course Canvas]()
 - [Course Homepage]()
-- [Course GitHub Page]()
+- [Course GitHub Page](https://github.com/broughtj/Fin5350)
 
 ## Instructor Information
 
