@@ -1,0 +1,12 @@
+% Chapter 2
+% Tyler J. Brough
+% September 8, 2017
+
+## Word Problems
+
+```{python, evaluate = False}
+# Word Problems
+# Demonstrates numbers and math
+
+print("If a 2000 pound pregnant hippo gives birth to a 100 pound calf,")
+```
