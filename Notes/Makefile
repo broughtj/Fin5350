@@ -1,6 +1,13 @@
 tex:
 	pweave -f pandoc2latex chp2.pmd
 
+pdf:
+	pweave -f pandoc2latex chp2.pmd
+	pdflatex chp2.tex
+	pdflatex chp2.tex
+	pdflatex chp2.tex
+	rm -f *.log *.aux *.out
+
 html:
 	pweave -f md2html chp2.pmd
 
