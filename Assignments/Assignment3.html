@@ -593,8 +593,10 @@ code {
 .mh { color: #666666 } /* Literal.Number.Hex */
 .mi { color: #666666 } /* Literal.Number.Integer */
 .mo { color: #666666 } /* Literal.Number.Oct */
+.sa { color: #BA2121 } /* Literal.String.Affix */
 .sb { color: #BA2121 } /* Literal.String.Backtick */
 .sc { color: #BA2121 } /* Literal.String.Char */
+.dl { color: #BA2121 } /* Literal.String.Delimiter */
 .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .s2 { color: #BA2121 } /* Literal.String.Double */
 .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -605,15 +607,57 @@ code {
 .s1 { color: #BA2121 } /* Literal.String.Single */
 .ss { color: #19177C } /* Literal.String.Symbol */
 .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.fm { color: #0000FF } /* Name.Function.Magic */
 .vc { color: #19177C } /* Name.Variable.Class */
 .vg { color: #19177C } /* Name.Variable.Global */
 .vi { color: #19177C } /* Name.Variable.Instance */
+.vm { color: #19177C } /* Name.Variable.Magic */
 .il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
+
+
+
+
 
 <style>
 h1.title {margin-top : 20px}
 img {max-width : 100%}
+
+#From nbconvert
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
 </style>
 
 </HEAD>
@@ -637,36 +681,38 @@ McDonald book on page xxx (see attached). You should get a price of $2.999 for t
 <p><br></p>
 <p>Also, price the corresponding call option to demonstrate the algorithm, implemented once, is polymorphic and is
 capable of pricing call options as well. </p>
+
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">VanillaOption</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;An abstract interface for plain vanilla options.&quot;&quot;&quot;</span>
+	<span class="sd">&quot;&quot;&quot;An abstract interface for plain vanilla options.&quot;&quot;&quot;</span>
 
-        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strike</span><span class="p">,</span> <span class="n">expiry</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">strike</span> <span class="o">=</span> <span class="n">strike</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">expiry</span> <span class="o">=</span> <span class="n">expiry</span>
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strike</span><span class="p">,</span> <span class="n">expiry</span><span class="p">):</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">strike</span> <span class="o">=</span> <span class="n">strike</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">expiry</span> <span class="o">=</span> <span class="n">expiry</span>
 
-        <span class="k">def</span> <span class="nf">payoff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spot</span><span class="p">):</span>
-                <span class="k">pass</span>
+	<span class="k">def</span> <span class="nf">payoff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spot</span><span class="p">):</span>
+		<span class="k">pass</span>
 
 <span class="k">class</span> <span class="nc">VanillaCallOption</span><span class="p">(</span><span class="n">VanillaOption</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;A concrete class for vanilla call options.&quot;&quot;&quot;</span>
+	<span class="sd">&quot;&quot;&quot;A concrete class for vanilla call options.&quot;&quot;&quot;</span>
 
-        <span class="k">def</span> <span class="nf">payoff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spot</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">spot</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">strike</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+	<span class="k">def</span> <span class="nf">payoff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spot</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">spot</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">strike</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">VanillaPutOption</span><span class="p">(</span><span class="n">VanillaOption</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;A concrete class for vanilla put options.&quot;&quot;&quot;</span>
+	<span class="sd">&quot;&quot;&quot;A concrete class for vanilla put options.&quot;&quot;&quot;</span>
 
-        <span class="k">def</span> <span class="nf">payoff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spot</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">strike</span> <span class="o">-</span> <span class="n">spot</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+	<span class="k">def</span> <span class="nf">payoff</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spot</span><span class="p">):</span>
+		<span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">strike</span> <span class="o">-</span> <span class="n">spot</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
 </pre></div>
 
 <p><br>
 With these classes you can now write your pricing function using the code below as an outline.</p>
 <p><br></p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">EuropeanBinomialPricer</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">spot</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">vol</span><span class="p">,</span> <span class="n">div</span><span class="p">,</span> <span class="n">steps</span><span class="p">):</span>
-        <span class="c1">## insert code here</span>
 
-        <span class="k">return</span> <span class="n">price</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">EuropeanBinomialPricer</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">spot</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">vol</span><span class="p">,</span> <span class="n">div</span><span class="p">,</span> <span class="n">steps</span><span class="p">):</span>
+	<span class="c1">## insert code here</span>
+
+	<span class="k">return</span> <span class="n">price</span>
 </pre></div>
 
 <p><br></p>
@@ -679,10 +725,11 @@ With these classes you can now write your pricing function using the code below 
 and the American solutions.</p>
 <p><br>
 Use the following as a starting outline:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">AmericanBinomialPricer</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">spot</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">vol</span><span class="p">,</span> <span class="n">div</span><span class="p">,</span> <span class="n">steps</span><span class="p">):</span>
-        <span class="c1">## insert your code here</span>
 
-        <span class="k">return</span> <span class="n">price</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">AmericanBinomialPricer</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">spot</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">vol</span><span class="p">,</span> <span class="n">div</span><span class="p">,</span> <span class="n">steps</span><span class="p">):</span>
+	<span class="c1">## insert your code here</span>
+
+	<span class="k">return</span> <span class="n">price</span>
 </pre></div>
 
 <p><br></p>
@@ -713,10 +760,11 @@ SE(\hat{C_{0}}) = \frac{SD(C_{0,j})}{\sqrt{M}}
 SD(C_{0,j}) = \sqrt{\frac{1}{M-1} \sum\limits_{j=1}^{M} (C_{0,j} - \hat{C_{0}})^{2}}
 \]</span class="math"></p>
 <p>Report both <span class="math">\(\hat{C_{0}}\)</span class="math"> and <span class="math">\(SE(\hat{C_{0}})\)</span class="math">.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">NaiveMonteCarloPricer</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">spot</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">vol</span><span class="p">,</span> <span class="n">div</span><span class="p">,</span> <span class="n">nreps</span><span class="p">):</span>
-        <span class="c1">## insert your code here</span>
 
-        <span class="k">return</span> <span class="n">price</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">NaiveMonteCarloPricer</span><span class="p">(</span><span class="n">option</span><span class="p">,</span> <span class="n">spot</span><span class="p">,</span> <span class="n">rate</span><span class="p">,</span> <span class="n">vol</span><span class="p">,</span> <span class="n">div</span><span class="p">,</span> <span class="n">nreps</span><span class="p">):</span>
+	<span class="c1">## insert your code here</span>
+
+	<span class="k">return</span> <span class="n">price</span>
 </pre></div>
 
 <h2>Deck of Cards</h2>
@@ -746,8 +794,8 @@ you begin to write any code.</p>
     <HR/>
     <div class="footer">
       <p>Published from <a href="Assignment3.pmd">Assignment3.pmd</a>
-    using <a href="http://mpastell.com/pweave">Pweave</a> 0.25
-    on 07-10-2017.<p></div>
+    using <a href="http://mpastell.com/pweave">Pweave</a> 0.30.1
+    on 09-10-2017.<p></div>
 
             </div>
         </div>
