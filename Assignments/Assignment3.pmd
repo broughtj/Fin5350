@@ -1,4 +1,4 @@
-% Finance 5330 - Assignment 3
+% Finance 5350 - Assignment 3
 % Tyler J. Brough
 % October 7, 2017
 
@@ -16,7 +16,7 @@ multi-period Binomial Option Pricing Model (BOPM). This problem is more or less 
 <br>
 
 Demonstrate that this code works by replicating the pricing of the European put option in Figure 10.6 of the
-McDonald book on page xxx (see attached). You should get a price of $2.999 for the put option. 
+McDonald book on page 328 (see attached). You should get a price of $2.999 for the put option. 
 
 <br>
 
