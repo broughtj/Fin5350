@@ -104,7 +104,7 @@ S_{t+dt} = S_{t} + r S_{t} dt + \sigma S_{t} \sqrt{dt} Z
 $$
 
 
-An alternative is to work with $x_{t} = \log{S_{t}}$. Then by It$\^{o}$'s Lemma we have
+An alternative is to work with $x_{t} = \ln({S_{t}})$. Then by It$\^{o}$'s Lemma we have
 
 
 $$
@@ -126,3 +126,141 @@ $$
 where $dt = t_i - t_{i-1}$.
 
 
+### Euler Scheme for Heston's Stochastic Volatility
+
+Again, for Heston dynamics are described by the bivariate process:
+
+$$
+\begin{aligned}
+dS_t &= r S_t dt + \sqrt{V_t} S_t dW_{1,t} \\
+dV_t &= \kappa (\theta - V_t) dt + \sigma \sqrt{V_t} dW_{2,t} \\
+E(dW_{1,t}, dW_{2,t}) &= \rho dt
+\end{aligned}
+$$
+
+The stochastic differential equation (SDE) in integral form is:
+
+$$
+V_{t+dt} = V_t + \int\limits_{t}^{t+dt} \kappa (\theta - V_t) du + \int\limits_{t}^{t+dt} \sigma \sqrt{V_u} dW_{2,u} 
+$$
+
+Again we use the left-point rule
+
+$$
+\begin{aligned}
+\int\limits_{t}^{t+dt} \kappa (\theta - V_u) du &\approx \kappa (\theta - V_t) dt \\
+\int\limits_{t}^{t+dt} \sigma \sqrt{V_u} dW_{2,u} &\approx \sigma \sqrt{V_t} (W_{t+dt} - W_t) \\
+                                                  &= \sigma \sqrt{V_t dt} Z_v
+\end{aligned}
+$$
+
+where $Z_v \sim N(0,1)$. 
+
+
+This gives us 
+
+
+$$
+V_{t+dt} = V_t + \kappa (\theta - V_t) dt + \sigma \sqrt{V_t dt} Z_v
+$$
+
+
+To avoid negative values, we can set $V_t$ to $V_t = \max{0, V_t}$. This is called the "full truncation scheme." The "reflection scheme" is an alternative, which sets $V_t$ to its absolute value $|V_t|$. 
+
+
+The process for $S_t$ is:
+
+$$
+S_{t+dt} = S_t + r \int\limits_{t}^{t+dt} S_u du + \int\limits_{t}^{t+dt} \sqrt{V_u} S_u dW_u
+$$
+
+
+Euler discretization leads to:
+
+$$
+\begin{aligned}
+\int\limits_{t}^{t+dt} S_u du   &\approx S_t dt \\
+\int\limits_{t}^{t+dt} dW_{1,t} &\approx \sqrt{V_t} S_t (W_{t+dt} - W_t) \\
+                                &= \sqrt{V_t dt} S_t Z_s  
+\end{aligned}
+$$
+
+where $Z_s \sim N(0,1)$. We end up with:
+
+
+$$
+S_{t+dt} = S_t + r S_t dt + \sqrt{V_t dt} S_t Z_s
+$$
+
+with $Corr(Z_v, Z_s) = \rho$.
+
+
+### The Process for $\ln{S_t}$
+
+Let $x_t = \ln{S_t}$. Then
+
+$$
+dx_t = \left(r - \frac{1}{2} V_t \right) dt + \sqrt{V_t} dW_{1,t}
+$$
+
+Or in integral form
+
+$$
+x_{t + dt} = x_t + \int\limits_{0}^{t} \left( r - \frac{1}{2} V_u \right) du + \int\limits_{0}^{t} \sqrt{V_u} dW_{1,u} 
+$$
+
+
+Euler discretization gives us
+
+
+$$
+\begin{aligned}
+x_{t+dt} &= x_t + \left(r - \frac{1}{2} V_t \right) dt + \sqrt{V_t} \left(W_{1,t+dt} - W_{1,t} \right) \\
+         &= x_t + \left(r - \frac{1}{2} V_t \right) dt + \sqrt{V_t dt} Z_s 
+\end{aligned}
+$$
+
+Hence, for $S_t$ we have
+
+$$
+S_{t+dt} = S_{t} \exp{\left[ \left(r - \frac{1}{2} V_t \right) dt + \sqrt{V_t dt} Z_s \right]}
+$$
+
+
+Again, to avoid negative variances we need to replace $V_t$ with either $V_t^{+}$ or $|V_t|$.
+
+
+To generate $Z_v$ and $Z_s$ with correlation $\rho$, we do the following:
+
+1. First generate two independent standard normals $Z_1$ and $Z_2$.
+2. Set $Z_v = Z_1$.
+3. Set $Z_s = \rho Z_1 + \sqrt{(1 - \rho^2)} Z_2$
+
+
+Let's see how to do this in Python:
+
+
+\vspace{10mm}
+
+
+```{python, evaluate = True}
+import numpy as np
+rho = 0.85
+z1 = np.random.normal(size=10000)
+z2 = np.random.normal(size=10000)
+zv = z1
+zs = rho * z1 + np.sqrt(1 - (rho * rho)) * z2 
+np.corrcoef(zv,zs)
+```
+
+
+\vspace{10mm}
+
+Now we can use Python to actually carry out the Monte Carlo simulation for a stochastic volatility model:
+
+
+```{python, evaluate = True}
+import numpy as np
+
+
+```
