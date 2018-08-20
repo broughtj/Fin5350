@@ -29,17 +29,20 @@ This is a course on computational financial modeling using the Python programmin
 
 ### Prerequisites
 
-- Statistics 2000/2300 Business Statistics 
-- Math 1100 or 1210 Calculus
+- Stat 2300 Business Statistics 
+- Math 1100/1210 Calculus
 - Finance 3200 and 3400
-- ***Or*** approval of the professor
+- ___Or___ approval of the professor
 
 Students must be prepared to program in Python for computational assignments. No prior programming experience is required! 
 
 
 ### Textbooks
 
+While there are no ___required___ textbooks for the course, the following are ___strongly___ suggested. 
 
+- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) by Jake VanderPlas
+- [An Option Greeks Primer](https://www.palgrave.com/us/book/9781137371669) by Jawwad Farid
 
 <br>
 
@@ -74,7 +77,7 @@ Finance 5350 is taught using Python and the *Scientific Stack*, a set of core sc
 The main focus of the course is the Python programming for financial modeling. We will be using the Anaconda Python
 Distribution, which is free:
 
-- [Anaconda Python Distribution](https://www.continuum.io/downloads).
+- [Anaconda Python Distribution](https://www.anaconda.com/download/)
 
 <br>
 
@@ -127,13 +130,13 @@ This is a list of topics that will be covered in this course (not necessarily in
 	* def, cdef, and cpdef
 	* Typed Memoryviews & Numpy
 	* Cython Extension Types
+	* Setup files and compilation
 - Software Design
 	* Object-Oriented Programming
 	* Design Patterns
 - Monte Carlo Simulation
 	* Monte Carlo Integration
-	* Simulating Supply 
-	* Monte Carlo Option Pricing
+	* Monte Carlo for Option Pricing & Delta Hedging
 - Time Series Bootstrap
 	* Politis and Romano Stationary Bootstrap
 
@@ -142,9 +145,9 @@ This is a list of topics that will be covered in this course (not necessarily in
 Important Dates:
 
 - _First Day of Class_ - Aug 27
-- _Labor Day_ - Sep 04
-- _Fall Break_ - Oct 20
-- _Thanksgiving Holiday_ - Nov 22 - 24
-- _Last Day of Class_ - Dec 08
+- _Labor Day_ - Sep 03
+- _Fall Break_ - Oct 19
+- _Thanksgiving Holiday_ - Nov 21 - 23
+- _Last Day of Class_ - Dec 07
 - _Final Exams_ - Dec 10 - 14
 
