@@ -7,8 +7,8 @@
 - Course Dates: August 27 - December 14, 2018
 - Course Time: MW 3:30 - 4:45 PM
 - Course Room: Huntsman Hall 380
-- [Slack Channel]()
-- [Course Canvas]()
+- [Slack Channel](https://fin5350.slack.com)
+- [Course Canvas](https://usu.instructure.com/courses/496894)
 - [Course Homepage]()
 - [Course GitHub Page](https://github.com/broughtj/Fin5350)
 
