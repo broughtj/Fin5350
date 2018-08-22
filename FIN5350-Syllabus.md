@@ -109,6 +109,12 @@ All class communication will take place using [Slack](https://slack.com), a mess
 Clients for most computing and mobile platforms can be [downloaded from the Slack website](https://slack.com/downloads), or students may use the web client via a desktop browser.
 
 
+#### Visual Studio Code Text Editor
+
+I will be using `vscode` (when not using Vim from the command line). I highly recommend that you do as well. I will post details about downloading
+[`vscode`](https://code.visualstudio.com/) and configuring it for the class. I highly recommend that you install the `vscode-vim` extension for Vim emulation. 
+
+
 ### Schedule of Topics
 
 This is a list of topics that will be covered in this course (not necessarily in order):
