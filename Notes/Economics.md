@@ -20,12 +20,12 @@ We will take these each in turn. The following paragraphs are taken from Buchana
 
 ## Economics is a Very Peculiar Science
 
-There is a "science" of economics, but it bears little or no similarity to the physical-biological sciences, as the latter are normally conceived. Economics is "predictive" in a totally different sense, and the indirect implications for "control" are not comparable. The problems in economics are not amenable to scientific solutions, and progress is not to be expected by pushing back the frontiers of science. The strictures of both Frank Knight and F.A. Hayek against scientism require continued repetion.
+There is a "science" of economics, but it bears little or no similarity to the physical-biological sciences, as the latter are normally conceived. Economics is "predictive" in a totally different sense, and the indirect implications for "control" are not comparable. The problems in economics are not amenable to scientific solutions, and progress is not to be expected by pushing back the frontiers of science. The strictures of both Frank Knight and F.A. Hayek against scientism require continued repetition.
 
 
 ## Economics is About Choice
 
-If economics were scientific in the strict sense, it could not be concerned with choice at all, as G.L.S. Shackle should have taught us all. Choice is necessarily made among imagined "posibles," and choice-making under certainty becomes internally contradictory. The equilibrium constructions are useful only if their limitations are appreciated. These allow us to discuss directions of adjustment rather than states of potential attainability. 
+If economics were scientific in the strict sense, it could not be concerned with choice at all, as G.L.S. Shackle should have taught us all. Choice is necessarily made among imagined "possibles," and choice-making under certainty becomes internally contradictory. The equilibrium constructions are useful only if their limitations are appreciated. These allow us to discuss directions of adjustment rather than states of potential attainability. 
 
 
 ## Economics Involves Actors
@@ -35,7 +35,7 @@ Without actors, there is no play. This truism has been overlooked by modern econ
 
 ## Economics is About Arbitrage
 
-The behavioral paradigm central to economics is that of the trader whose Smithean propensity to truck and barter locates and creates opportunities for mutual gains. This paradigm is constrasted with that of the maximizing engineer who allocates scarce resources among alternatives. As several of the essays in the volume have suggested, the maximization paradigm is the fatal methodological flaw in modern economics.
+The behavioral paradigm central to economics is that of the trader whose Smithean propensity to truck and barter locates and creates opportunities for mutual gains. This paradigm is contrasted with that of the maximizing engineer who allocates scarce resources among alternatives. As several of the essays in the volume have suggested, the maximization paradigm is the fatal methodological flaw in modern economics.
 
 
 ## Economics is About a Game Within Rules
@@ -45,10 +45,10 @@ Choices are made by actors, by traders, constrained within specifically determin
 
 ## Economics is Political
 
-Choices are also made among rules and sets of rules. The "social contract" also offers mutuality of gains, and indeed, the "social miracle" must remain central to man's consciousness. Passive acquiescense in the developing events of history, by scholars and non-scholars, must produce the natural reversion to the jungle.
+Choices are also made among rules and sets of rules. The "social contract" also offers mutuality of gains, and indeed, the "social miracle" must remain central to man's consciousness. Passive acquiescence in the developing events of history, by scholars and non-scholars, must produce the natural reversion to the jungle.
 
 
-## Economics Has a Didactice Role
+## Economics Has a Didactic Role
 
 As a discipline or area of inquiry, economics has social value in offering an understanding of the principle of order emergent from decentralized processes, of spontaneous coordination. (The market is the classic example.) Such an understanding is necessarily prior to an informed decision on alternative forms of social order, or even on alternative directions of marginal extension. The principle of order that economics teaches is in no way "natural" to the human mind which, in innocence, is biased toward simplistic collectivism.
 
@@ -56,3 +56,4 @@ As a discipline or area of inquiry, economics has social value in offering an un
 ## Economics is Elementary
 
 Despite the attempts by modern scholars to cloak their own insecurity in complexity, the central principles of economics are elementary. We do not need the excess baggage of modern mathematics to grasp and to convey the basic wisdom that Adam Smith discovered and that his successors emphasized.
+
