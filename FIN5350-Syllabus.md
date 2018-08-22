@@ -148,7 +148,7 @@ This is a list of topics that will be covered in this course (not necessarily in
 
 <br>
 
-Important Dates:
+### Important Dates:
 
 - _First Day of Class_ - Aug 27
 - _Labor Day_ - Sep 03
