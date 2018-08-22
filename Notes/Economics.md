@@ -1,6 +1,6 @@
 # Financial Economic Foundations of Financial Engineering 
 
-The theoretical foundation of computational finance and financial engineering is provided by financial economics. This is similar to how the physical sciences provide the foundation for the traditional engineering disciplines. One of the main differences between financial economics and financial engineering is that the former has a positive focus, whereas the latter has a normative focus. 
+The theoretical foundation of computational finance and financial engineering is provided by financial economics. This is similar to how the physical sciences provide the foundation for the traditional engineering disciplines. One of the main differences between financial economics and financial engineering is that the former has a positive focus, whereas the latter has a normative focus. In financial engineering we seek to solve real world financial problems with quantitative and computational tools and an engineering mindset. 
 
 Our focus in this course is more on financial engineering than financial economics, but we need the foundation that financial economics provides us. We will simply take these principles for granted. But it behooves us to remind ourselves what these essential building blocks are. 
 
