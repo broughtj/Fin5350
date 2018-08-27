@@ -9,7 +9,6 @@
 - Course Room: Huntsman Hall 380
 - [Slack Channel](https://fin5350.slack.com)
 - [Course Canvas](https://usu.instructure.com/courses/496894)
-- [Course Homepage]()
 - [Course GitHub Page](https://github.com/broughtj/Fin5350)
 
 ## Instructor Information
@@ -147,6 +146,7 @@ This is a list of topics that will be covered in this course (not necessarily in
 	* Politis and Romano Stationary Bootstrap
 
 <br>
+
 
 ### Important Dates:
 
