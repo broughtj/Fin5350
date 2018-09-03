@@ -1,0 +1,55 @@
+% Introduction to Python
+% Tyler J. Broug, PhD
+% September 3, 2018
+
+
+# Introduction
+
+Lorem ipsum.
+
+
+## Your First Program
+
+
+<< label="hello1", evaluate=False >>= 
+print("Hello, World!")
+@
+
+
+## Using Variables
+
+<< label="hello2", evaluate=False >>=
+message = "Hello, World!"
+print(message)
+@
+
+
+## Using Functions
+
+<< label="hello3", evaluate=False >>=
+def greet(greeting, name):
+	value = "{0}, {1}!".format(greeting, name)
+
+## main
+greet("Hello", "Quinn")
+greet("Czesc", "Marcin")
+@
+
+
+## Using Classes 
+
+<< label="hello4", evaluate=False >>=
+class Robot:
+	def __init__(self, salutation, first_name, last_name):
+		self.salutation = salutation
+		self.first_name = first_name
+		self.last_name = last_name
+
+	def greet(self):
+		message = "{0}, {1} {2}".format(self.salutation, self.first_name, self.last_name)
+		print(message)
+
+## main
+bot = Robot("Greetings", "Quinn", "Zimmerman")
+bot.greet()
+@
