@@ -36,7 +36,7 @@ greet("Czesc", "Marcin")
 
 ## Using Classes 
 
-```{python, label='hello4', evaluate=False}
+```{python, label='hello4', evaluate=False, wrap=True}
 class Robot:
 	def __init__(self, salutation, first_name, last_name):
 		self.salutation = salutation
@@ -44,7 +44,9 @@ class Robot:
 		self.last_name = last_name
 
 	def greet(self):
-		message = "{0}, {1} {2}".format(self.salutation, self.first_name, self.last_name)
+		message = "{0}, {1} {2}".format(self.salutation,
+				                        self.first_name,
+										self.last_name)
 		print(message)
 
 ## main
