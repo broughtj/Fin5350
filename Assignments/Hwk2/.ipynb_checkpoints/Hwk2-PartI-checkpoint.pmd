@@ -1,0 +1,35 @@
+% Homework 2 - Part I
+% Tyler J. Brough
+% October 2, 2018
+
+
+## Numerical Problems
+
+Please complete the following numerical problems by hand (or in a pmd document like this one). 
+
+<br>
+
+##### __Problem 1__
+ 
+Let $S = \$100$, $K = \$105$, $r = 8\%$, $T = 0.5$, and $\delta = 0.0$. Let $u = 1.3$, $d = 0.8$, and $n = 1$.
+
+    a. What are the premium, $\Delta$, and $B$ for a European call?
+    
+    b. What are the premium, $\Delta$, and $B$ for a European put?
+    
+    
+<br>
+<br>
+
+##### __Problem 2__
+
+Let $S = \$100$, $K = \$95$, $r = 8\%$, $T = 0.5$, and $\delta = 0.0$. Let $u = 1.3$, $d = 0.8$, and $n = 1$.
+
+    a. Verify that the price of a European put is $\$7.471$.
+    
+    b. Suppose you observe a call price of $\$17$. What is the arbitrage?
+    
+    c. Suppose you observe a call price of $\$15.50$. What is the arbitrage?
+    
+    
+
