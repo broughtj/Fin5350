@@ -42,7 +42,7 @@ More words about computation in finance and economics
 
 # Summary and Conclusion
 
-Summary of paper.
+Summary of paper. More stuff!
 
 <!--
 # References
