@@ -1,0 +1,37 @@
+---
+title: "Finance 5350 - Final Essay Proposal"
+author: "Tyler J. Brough"
+date: "October 11, 2018"
+output: pdf_document
+---
+
+
+1. Read the paper _What Should Economists Do?_ by James M. Buchanan. 
+  - Outline what Buchanan's main point is.
+  - What does Buchanan mean by the word ___catallatics___?
+  - According to Buchanan what do most economists do?
+  - What does he think they should do differently?
+  
+2. Similar to Buchanan propose an essay topic that is derived from this approach.
+  - Buchanan is addressing methodology in economics. He thinks economists should take a certain approach to economics (see your answers to the above questions)
+  - I want you to also address the question of  methodology in finance, economics, sociology, pyschology, you name it. 
+  - You can agree with Buchanan's approach, in which case you would propose something like: "What Should Computational Economists Do?" And you would follow up with what that approach looks like (e.g. Agent-based modeling, computational game theory, etc).
+  - You can disagree with Buchanan's appproach, in which case you would propose something like: "Economists are Doing Just Fine. Thank you. Here's What They've Been Doing, and They Should Do More of it!" (e.g. DSGE models in macro, risk-neutral valuation in finance, etc)
+  - You can ignore Buchanan altogether and propose something unrelated to his approach (for or against). But you still have to propose an essay on the methodology of computational in some aspect. (e.g. The role of computational data science in a data-rich business or policy environment)
+  - I think you get the picture! If not, you __must__ come see me!!
+  
+3. Choose at least three sources that you intend to cite for your article. 
+  - Put these in your master.bib file in your repo and push.
+  - This is three sources in addition to Buchanan. Cite Buchanan at least to set the stage about methodological questions. But then you can do whatever you want. 
+  
+4. Write up your proposal.
+  - Write an abstract.
+  - Write an introduction.
+  - Write a brief literature review (include your three + 1 sources).
+  - Write in bullet point style the outline of your proposal.
+  
+5. This is due by October 26, 2018 at 6:00 pm. 
+  - Come see me if you need help getting going!
+  - Don't blow this off. This is a very important part of your grade. 
+  - Make sure to use the template given in the course repository. 
+  
