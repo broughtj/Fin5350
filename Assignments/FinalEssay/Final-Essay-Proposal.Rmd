@@ -17,7 +17,7 @@ output: pdf_document
   - I want you to also address the question of  methodology in finance, economics, sociology, pyschology, you name it. 
   - You can agree with Buchanan's approach, in which case you would propose something like: "What Should Computational Economists Do?" And you would follow up with what that approach looks like (e.g. Agent-based modeling, computational game theory, etc).
   - You can disagree with Buchanan's appproach, in which case you would propose something like: "Economists are Doing Just Fine. Thank you. Here's What They've Been Doing, and They Should Do More of it!" (e.g. DSGE models in macro, risk-neutral valuation in finance, etc)
-  - You can ignore Buchanan altogether and propose something unrelated to his approach (for or against). But you still have to propose an essay on the methodology of computational in some aspect. (e.g. The role of computational data science in a data-rich business or policy environment)
+  - You can ignore Buchanan altogether and propose something unrelated to his approach (for or against). But you still have to propose an essay on the methodology of computational science in some aspect. (e.g. The role of computational data science in a data-rich business or policy environment)
   - I think you get the picture! If not, you __must__ come see me!!
   
 3. Choose at least three sources that you intend to cite for your article. 
