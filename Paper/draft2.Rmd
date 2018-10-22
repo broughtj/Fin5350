@@ -26,7 +26,7 @@ biblio-style: apsr
 
 # Introduction
 
-Lorem ipsum. This is a citation of @Buchanan1979. I will price a Bermudan swaption with Monte Carlo, because I'm amazing!
+Lorem ipsum. This is a citation of @Buchanan1979. I will price a Bermudan swaption with Monte Carlo, because I'm amazing! @Hayek1945.
 
 ## Subsection 1
 
