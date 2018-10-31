@@ -1,0 +1,51 @@
+---
+title: "FIN 5350 - Homework 3"
+author: "Tyler J. Brough"
+date: "October 31, 2018"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+
+##### __Problem 1__
+ 
+Let $K = \$40.0$, $r = 8\%$, $\sigma = 30\%$, $T = 1.0$, and $\delta = 0.0$. 
+
+<br>
+
+\begin{itemize}
+ \item[\textbf{a.}] Write \texttt{Python} functions for delta, gamma, vega, theta and rho for European call and put options under the BSM model.
+ \item[\textbf{b.}] Calculate and plot delta, gamma, vega, theta, and rho for a call option for a range of time $T$ stock prices ($S_{T}$) ranging from $\$0.0$ to $\$80.0$.
+ \item[\textbf{c.}] Repeat the above for a put option.
+\end{itemize}
+   
+<br>
+
+##### __Problem 2__
+
+Using the same basic data above, plus an initial stock price of $S_{0} = \$41.0$ simulate five daily prices (sequentially), using the following:
+
+$$
+S_{t+h} = S_{t} \exp{\{(r - \delta - \frac{1}{2} \sigma^{2}) h + \sigma \sqrt{h} Z \}}
+$$
+
+<br>
+
+where $Z$ is a draw from a standard normal distribution. This can be done in \texttt{Python} as follows (for a single draw):
+
+\vspace{2.5mm}
+
+```{python}
+import numpy as np
+z = np.random.normal(size=1)
+```
+
+<br>
+
+See Chapter 19 in the McDonald text for additional guidance on the simulation. Once you have the five simulated daily prices construct a table for delta-hedging similar to table 13.2 (page 420 2nd edition, page 387 3rd edition) of the McDonald textbook. Be sure to set $h$ to equal a day (i.e. $h = 1/252$).  
+
+##### __Problem 3__
+
+
