@@ -9,6 +9,7 @@ def is_nugget_number(candidate, SIX = 6, NINE = 9, TWENTY = 20):
 
 
 ## main
+sizes = {'S' : 6, 'M' : 9, 'L': 20}
 SIX = 6
 count = 0
 largest = 0
@@ -23,8 +24,3 @@ while count < SIX:
     candidate += 1
         
 print("The largest size that you cannot get is: {0}".format(largest))
-        
-        
-
-    
-    

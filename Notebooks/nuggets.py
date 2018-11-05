@@ -24,8 +24,3 @@ while count < SIX:
     candidate += 1
         
 print("The largest size that you cannot get is: {0}".format(largest))
-        
-        
-
-    
-    
