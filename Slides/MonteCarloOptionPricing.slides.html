@@ -16,7 +16,7 @@
 
 <!-- General and theme style sheets -->
 <link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -12279,7 +12279,7 @@ The BSM Put Price is:  2.89
 <p>We can approximate this using Monte Carlo with the following:</p>
 <p><br>
 $$
-\hat{C_{0}} = e^{(-r T)} \sum\limits_{j=1}^{m} C_{T, j}
+\hat{C_{0}} = e^{(-r T)} \frac{1}{m}\sum\limits_{j=1}^{m} C_{T, j}
 $$
 <br></p>
 <p>where $C_{T,j}$ is the payoff of the $j^{th}$ simulated price and $m$ is the number of replications in the simulation. <em>This almost seems too easy!</em></p>
@@ -12433,7 +12433,6 @@ $$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">stopLoss</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">paths</span><span class="p">):</span>
-    <span class="n">paths</span> <span class="o">=</span> <span class="n">AssetPaths</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
     <span class="n">covered</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">costs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
