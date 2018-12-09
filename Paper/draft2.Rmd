@@ -1,24 +1,26 @@
 ---
-output: 
-  pdf_document:
-    citation_package: natbib
-    keep_tex: true
-    fig_caption: true
-    latex_engine: pdflatex
-    template: ./svm-latex-ms.tex
 title: "Pricing Swaptions with Monte Carlo"
 author:
-- name: John von Neumann
-  affiliation: School of Hard Knocks 
-abstract: "In this article ..."
-keywords: "Python, Monte Carlo, simulation, arbitrage"
+- affiliation: School of Hard Knocks
+  name: John von Neumann
 date: "`r format(Sys.time(), '%B %d, %Y')`"
-geometry: margin=1in
+output:
+  html_document:
+    df_print: paged
+  pdf_document:
+    citation_package: natbib
+    fig_caption: yes
+    keep_tex: yes
+    latex_engine: pdflatex
+    template: ./svm-latex-ms.tex
+biblio-style: apsr
 fontfamily: mathpazo
 fontsize: 11pt
-spacing: double
+geometry: margin=1in
+keywords: Python, Monte Carlo, simulation, arbitrage
 bibliography: ./master.bib
-biblio-style: apsr
+spacing: double
+abstract: In this article ...
 ---
 
 
