@@ -15,18 +15,8 @@ def bsmPutPrice(S, K, r, v, q, T):
     
     return putPrc  
     
-def AssetPaths(spot, mu, sigma, expiry, div, nreps, nsteps):
-    paths = np.empty((nreps, nsteps + 1))
-    h = expiry / nsteps
-    paths[:, 0] = spot
-    mudt = (mu - div - 0.5 * sigma * sigma) * h
-    sigmadt = sigma * np.sqrt(h)
-    
-    for t in range(1, nsteps + 1):
-        z = np.random.normal(size=nreps)
-        paths[:, t] = paths[:, t-1] * np.exp(mudt + sigmadt * z)
 
-    return paths
+    
 
 def stopLoss(S, K, mu, sigma, r, T, paths):
     df = np.exp(-r * np.arange(n) * h)
