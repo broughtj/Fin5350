@@ -4,6 +4,39 @@ def callPayoff(spot, strike):
     return np.maximum(spot - strike, 0.0)
 
 
+def ArithmeticAsianControlVariate(spot, strike, rate, vol, div, expiry, nreps, nsteps):
+    paths = np.empty((nreps, nsteps + 1))
+    h = expiry / nsteps
+    paths[:, 0] = spot
+    mudt = (mu - div - 0.5 * sigma * sigma) * h
+    sigmadt = sigma * np.sqrt(h)
+
+
+    astar = np.zeros(nreps)
+    Gstar = 3.14
+
+
+    for j in range(nreps):
+        z = np.random.normal(size=nsteps)
+        for t in range(1, nsteps + 1):
+            z = np.random.normal(size=nreps)
+            paths[j, t] = paths[j, t-1] * np.exp(mudt + sigmadt * z[t])
+
+        spotArith = np.mean(path[j])
+        spotGeo = gmean(path[j])
+
+        astar[j] = callPayoff(spotArith, K) - (Gstar - callPayoff(spotGeo, K))
+
+
+    prc = astar.mean() * np.exp(-rate * expiry)
+    se = astar.std(ddof=1) / np.sqrt(nreps)
+
+    return (prc, se)
+    
+
+    return paths
+ 
+
 def AssetPaths(spot, mu, sigma, expiry, div, nreps, nsteps):
     paths = np.empty((nreps, nsteps + 1))
     h = expiry / nsteps
