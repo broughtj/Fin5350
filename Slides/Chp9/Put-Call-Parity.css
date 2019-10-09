@@ -1,0 +1,15 @@
+#rise-header {
+    margin: 1%;
+    right: 1%;
+    color: orange;
+}
+
+#rise-footer {
+    margin: 2%;
+    right: 5.5%;
+}
+
+.danger {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
