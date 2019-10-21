@@ -152,11 +152,11 @@ project questions. Answers should use Markdown Cells for plain English
 answers and Code Cells for Python code. You may wish to have some code in 
 an accompanying (i.e. "imported") module to keep things clean. 
 
-The SM may decide to use a Google Doc to keep notes for meetings to keep
-a record throughout the project.
+The SM may decide to use a Google Doc or a Markdown document to keep notes
+for meetings to keep a record throughout the project.
 
-All of these documents should be in a shared Google Drive folder. The PO
-should invite the Stakeholder to the shared drive and Scrum Board. 
+All of these documents should be in a shared Github repository. The PO
+should invite the Stakeholder to the team repo and Scrum Board. 
 
 Additional Resources 
 --------------------
