@@ -1,0 +1,68 @@
+Group 1
+--------------------------------
+A00362938 Roberts, Skyler
+A01772504 Connor, Jaden
+A02020179 Christensen, Heather
+
+Group 2
+--------------------------------
+A00653347 Cardall, Dan
+A02222552 Mi, Xiaoyan
+A01429754 Olsen, Tyler
+
+Group 3
+--------------------------------
+A00302909 Bullard, Evan
+A02319189 Ollerton, Alex
+A02087918 Smith, Stokton
+
+Group 4
+--------------------------------
+A02047946 Fender, Andrew
+A01354240 Steffenhagen, Casey
+A01705293 Marshall, McKlayne
+
+Group 5
+--------------------------------
+A01383741 Deem, Marshall
+A01899779 Banks, Joshua
+A01826089 Adams, Gabriel
+
+Group 6
+--------------------------------
+A02264079 Lyman, Josh
+A01258419 McGuire, Dillon
+A02094463 Bisbee, Clint
+A00303195 Goodridge, Janette
+
+Group 7
+--------------------------------
+A02316760 Mehrabinia, Poorya
+A01773994 Bacon, Kennon
+A02019152 Walker, Halea
+
+Group 8
+--------------------------------
+A01843737 Becker, Aaron
+A01842279 Wheeler, Dallin
+A01463312 Carter, Shad
+
+Group 9
+--------------------------------
+A01196370 Brann, Jeffrey
+A01847289 Iverson, Jace
+A02203722 Gunnell, Brooke
+
+Group 10
+--------------------------------
+A01879017 Hanson, Haley
+A01779949 Pitt, Cameron
+A02266952 Kinross, Carson
+A01894003 Hall, Alex
+
+Group 11
+--------------------------------
+A01510952 Christensen, Callin
+A01836024 Crofoot, Cody
+A01379587 Dahl, Sydney
+A01841721 Brinkerhoff, Grant
