@@ -10,4 +10,5 @@ steps = 3
 
 the_call = VanillaOption(strike, expiry, call_payoff)
 price = american_binomial(the_call, spot, rate, vol, div, steps)
+price2 = european_binomial(the_call, spot, rate, vol, div, steps)
 print(f"The Call Option Price is: {price : 0.3f}")
