@@ -15,7 +15,6 @@ class VanillaOption:
     def strike(self, new_strike):
         self.__strike = new_strike
 
-
     @property
     def expiry(self):
         return self.__expiry
@@ -77,7 +76,13 @@ def american_binomial(option, spot, rate, vol, div, steps):
             spot_t[j] = spot_t[j] / u
             prc_t[j] = np.maximum(prc_t[j], option.payoff(spot_t[j]))
                     
-    return prc_t[0] 
+    return prc_t[0]
+
+
+def naive_monte_carlo_pricer():
+    return 3.0
+
+
 
 if __name__ == "__main__":
     print("This is a module. Not intended to be run standalone.")
