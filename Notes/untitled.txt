@@ -1,0 +1,4 @@
+* Clewlow & Stickland Chapter 4
+* McDonald Chp18 - statistics background 
+* McDonald Chp19 - Monte Carlo
+* MCDonald Chp 20 - Geometric Brownian Motion
