@@ -1,0 +1,89 @@
+---
+title: "FIN 5350- Homework 2"
+author: "Tyler J. Brough"
+date: "October 16, 2019"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+
+## Numerical Problems
+
+Please complete the following numerical problems by hand (or in a Rmd document like this one). 
+
+<br>
+
+##### __Problem 1__
+ 
+Let $S = \$100$, $K = \$105$, $r = 8\%$, $T = 0.5$, and $\delta = 0.0$. Let $u = 1.3$, $d = 0.8$, and $n = 1$.
+
+<br>
+
+\begin{itemize}
+ \item[\textbf{a.}] What are the premium, $\Delta$, and $B$ for a European call?
+ \item[\textbf{b.}] What are the premium, $\Delta$, and $B$ for a European put?
+\end{itemize}
+    
+<br>
+<br>
+
+##### __Problem 2__
+
+Let $S = \$100$, $K = \$95$, $r = 8\%$, $T = 0.5$, and $\delta = 0.0$. Let $u = 1.3$, $d = 0.8$, and $n = 1$.
+
+<br>
+
+\begin{itemize}
+ \item[\textbf{a.}] Verify that the price of a European put is $\$7.471$.
+ \item[\textbf{b.}] Suppose you observe a call price of $\$17$. What is the arbitrage?
+ \item[\textbf{c.}] Suppose you observe a call price of $\$15.50$. What is the arbitrage?
+\end{itemize}
+
+<br>
+<br>
+
+##### __Problem 3__
+
+Let $S = \$100$, $K = \$95$, $\sigma = 30\%$, $r = 8\%$, $T = 1$, and $\delta = 0.0$. Let $u = 1.3$, $d = 0.8$, and $n = 2$. Construct the binomial tree for a call option. At each node provide the premium, $\Delta$, and $B$.
+
+
+<br>
+<br>
+
+##### __Problem 4__
+
+Repeat the option price calculation in the previous question for stock prices of $\$80$, $\$90$, $\$110$,
+$\$120$, and $\$130$, but now let $n = 3$. Keep everyting else fixed. What happens to the initial option
+$\Delta$ as the stock price increases?
+
+<br>
+<br>
+
+##### __Problem 5__
+
+Let $S = \$100$, $K = \$95$, $r = 8\%$ (continuously compounded), $\sigma = 30\%$, $\delta = 0$, and $T = 1$ year and $n = 3$.
+
+\begin{itemize}
+ \item[\textbf{a.}] What is the premium for an American call option? Is there any early exercise? 
+ \item[\textbf{b.}] What is the premium for a European call option? Use the computational shortcut with the
+ risk-neutral binomial pmf that I showed you in class. Compare the American and European premia.
+ \item[\textbf{c.}] What is the premium for a European put? Does put-call parity hold? (see McDonald Chapter 9). Also use the risk-neutral binomial pmf for this problem.  
+ \item[\textbf{d.}] What is the premium of the American put? Compare with the European put. If they differ, explain why.
+\end{itemize}
+
+<br>
+<br>
+
+##### __Problem 6__
+
+Let $S = \$40$, $K = \$40$, $r = 8\%$ (continuously compounded), $\sigma = 30\%$, $\delta = 0.0$, $T = 0.5$ year,
+and $n = 3$.
+
+<br>
+
+\begin{itemize}
+ \item[\textbf{a.}] Construct the binomial tree for the stock. What are $u$ and $d$?
+ \item[\textbf{b.}] Compute the premia of American and European calls and puts.
+\end{itemize}
