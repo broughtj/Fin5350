@@ -1,0 +1,44 @@
+import numpy as np
+from option import VanillaOption, call_payoff, put_payoff
+from collections import namedtuple
+
+PricerResult = namedtuple('PricerResult', ['price', 'stderr'])
+
+def NaiveMonteCarloPricer(option, spot, rate, vol, div, nsteps, nreps):
+    expiry = option.expiry
+    strike = option.strike
+    (spot, rate, vol, div) = data.get_data()
+    replications = engine.replications
+    time_steps = engine.time_steps
+    dt = expiry / engine.time_steps
+    disc = np.exp(-rate * dt)
+   
+    paths = np.empty((nreps, nsteps))
+    paths[:, 0] = spot
+
+    for t in range(1, nsteps):
+        z = np.random.normal(size = nreps)
+        paths[:,t]= paths[:,t-1] *  np.exp((rate - div - 0.5 * vol * vol) * dt + vol * np.sqrt(dt) * z)
+
+    payoffT = option.payoff(paths)
+
+    prc = payoffT.mean() * disc
+    se = payoffT.std(ddof=1) / np.sqrt(nreps)
+
+    return PricerResult(prc, se)
+
+
+## Main
+spot = 41.0
+strike = 40.0
+expiry = 1.0
+rate = 0.08
+vol = 0.30
+div = 0.0
+nsteps = 252
+nreps = 10000
+
+the_call = VanillaOption(strike, expiry, call_payoff)
+result = NaiveMonteCarloPricer(option, spot, rate, vol, div, nsteps, nreps)
+
+
