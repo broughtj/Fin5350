@@ -8,7 +8,7 @@ vol = 0.30
 div = 0.0
 expiry = 1.0
 steps = 10
-reps = 2500
+reps = 10000
 
 the_call = VanillaOption(strike, expiry, call_payoff)
 results1 = control_variate_pricer(the_call, spot, rate, vol, div, steps, reps, 0.0)
