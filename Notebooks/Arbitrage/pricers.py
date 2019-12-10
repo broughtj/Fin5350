@@ -1,5 +1,8 @@
 import numpy as np
-from scipy.stats import binom
+from scipy.stats import binom, norm
+from collections import namedtuple
+
+PricerResult = namedtuple("PricerResult", ['price', 'stderr'])
 
 def european_binomial(option, spot, rate, vol, div, steps):
     strike = option.strike
@@ -47,11 +50,41 @@ def american_binomial(option, spot, rate, vol, div, steps):
                     
     return prc_t[0]
 
+def naive_monte_carlo_pricer(option, spot, rate, vol, div, reps):
+    strike = option.strike
+    expiry = option.expiry
+    dt = expiry
+    nudt = (rate - div - 0.5 * vol * vol) * dt
+    sigdt = vol * np.sqrt(dt)
+    
+    z = np.random.normal(size=reps)
+    paths = spot * np.exp(nudt + sigdt  * z)
+    payoffs = np.exp(-rate * dt) * option.payoff(paths) 
+    prc = np.mean(payoffs)
+    se = np.std(payoffs, ddof=1) / np.sqrt(reps)
+    
+    return PricerResult(prc, se)
 
-def naive_monte_carlo_pricer():
-    # return (prc_t[0], stderr)
-    return 3.0
+def stratified_normals(M):
+    u = np.random.uniform(size=M)
+    i = np.arange(M)
+    uhat = (u + i) / M
+    return norm.ppf(uhat)
 
+def stratified_monte_carlo_pricer(option, spot, rate, vol, div, reps):
+    strike = option.strike
+    expiry = option.expiry
+    dt = expiry
+    nudt = (rate - div - 0.5 * vol * vol) * dt
+    sigdt = vol * np.sqrt(dt)
+    
+    z = stratified_normals(reps)
+    paths = spot * np.exp(nudt + sigdt  * z)
+    payoffs = np.exp(-rate * dt) * option.payoff(paths) 
+    prc = np.mean(payoffs)
+    se = np.std(payoffs, ddof=1) / np.sqrt(reps)
+    
+    return PricerResult(prc, se)
 
 
 if __name__ == "__main__":
