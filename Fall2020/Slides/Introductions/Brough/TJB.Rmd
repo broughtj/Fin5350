@@ -1,0 +1,110 @@
+---
+title: Who The Cuss is Tyler Brough? 
+titlegraphic: ./images/vertical-logo-blue.png
+header-includes:
+   - \usepackage{listings}
+fontsize: 10pt
+output:
+ beamer_presentation:
+    template: ./beamer-template.tex
+    keep_tex: false
+    toc: true
+ ioslides_presentation:
+    smaller: true
+---
+
+
+## I will now proceed to entangle the entire area...
+
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+     \includegraphics[scale=0.05]{images/tjb.jpg}
+   \end{column}
+
+   \begin{column}{0.5\textwidth}
+    \includegraphics[scale=0.4]{images/who.png}
+   \end{column}
+\end{columns}
+
+
+## The Fam
+
+\begin{center}
+\includegraphics[scale=0.07]{images/fam.jpg}
+\end{center}
+
+## Teaching
+
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+   \textbf{Fall}
+      \begin{itemize}
+        \item STAT 2300 Business Statistics
+        \item FIN 5350 Computational Financial Modeling
+      \end{itemize}
+   \end{column}
+
+   \begin{column}{0.5\textwidth}
+   \textbf{Spring}
+      \begin{itemize}
+        \item FIN 5330 Financial Econometrics
+        \item FIN 6470 Advanced Derivatives Markets
+      \end{itemize}
+   \end{column}
+\end{columns}
+
+## Research: Computational Statistical Catallactics
+
+\begin{columns}
+   \begin{column}{0.5\textwidth}
+     \includegraphics[width=4.5cm, height=5.75cm]{images/hayek.jpg}
+   \end{column}
+
+   \begin{column}{0.5\textwidth}
+    \includegraphics[width=4.5cm, height=5.75cm]{images/buchanan.jpg}
+   \end{column}
+\end{columns}
+
+
+## What is Catallactics?
+
+\begin{itemize}
+ \item[] \textbf{Hayek:} 
+  \begin{itemize}
+   \item[] "... the order brought about by mutual adjustment of many individual economies in a market. 
+           A catallaxy is thus the special kind of spontaneous order produced by the market through
+           people acting within the rules of the law of property, tort and contract."		   
+  \end{itemize} 
+ \item[]
+ \item[] \textbf{Buchanan:}
+ \begin{itemize}
+  \item[] "The elementary and basic approach that I suggest places \textit{'the theory of markets'} and
+          not the 'theory of resource allocation' at center stage. \textbf{My plea is really for the
+		  adoption of a sophisticated \textit{'catallatics'}}."
+ \end{itemize} 
+\end{itemize}
+
+
+## Some Notes
+
+* One of my favorite things to do is read. Here are some books that I am currently reading: 
+	* _English Creek_ by Ivan Doig
+	* _The Wisdom of Insecurity_ by Alan Watts
+	* _The Soul of Christianity_ by Huston Smith
+	* _Applied Predictive Modeling_ by Kuhn & Johnson
+	* _Computational Statistics Handbook 3rd Edition_ by Martinez & Martinez
+	* _How to Take Smart Notes_ by Sonke Ahrens
+	* _The Bullet Journal Method_ by Ryder Carroll
+* I enjoy hiking, backpacking, traveling, roadtrips, etc
+* I love blues, country, folk, rock and other forms of Americana music
+* I very badly want to play fingerstyle guitar, but unfortunately that is how I play.
+
+
+## Ask Me Anything
+
+\begin{center}
+\huge{\textbf{AMA}}
+\end{center}
+
+
+
