@@ -1,0 +1,69 @@
+<h2 id="introduction">Introduction</h2>
+<p>Git is a very powerful distributed version control system. The website for git is: <a href="https://git-scm.com/" class="uri">https://git-scm.com/</a>. You can download Git for your system from there.</p>
+<h1 id="create-clone">Create &amp; Clone</h1>
+<h2 id="create-a-new-repository">Create a New Repository</h2>
+<p>To create a new repository (repo) take the following steps:</p>
+<ol type="1">
+<li>Create a new directory, and move into it:</li>
+</ol>
+<pre><code>$ mkdir Jike
+$ cd Jike</code></pre>
+<ol start="2" type="1">
+<li>Now perform an <code>init</code> operation as follows:</li>
+</ol>
+<pre><code>$ git init</code></pre>
+<p>This creates a new repository!</p>
+<h2 id="clone-a-repository">Clone a Repository</h2>
+<p>You can create a local copy of a repo by doing the following:</p>
+<pre><code>$ git clone /path/to/repo</code></pre>
+<p>When using a remote server, your command might look like this:</p>
+<pre><code>$ git clone https://github.com/broughtj/Jike.git</code></pre>
+<p>This will create a local directory that “clones” the whole repository. This is what is meant by “distributed” in distributed version control system.</p>
+<h2 id="workflow">Workflow</h2>
+<p>You local repo consists of three “trees” maintained by git:</p>
+<ol type="1">
+<li>Working directory (holds actual files)</li>
+<li>Index (“stage”)</li>
+<li>HEAD which points to the last commit you’ve made</li>
+</ol>
+<p><img src="images/git-workflow.png" /></p>
+<h2 id="add-remove">Add &amp; Remove</h2>
+<p>You can propose changes (i.e. add it to the Index) using the following:</p>
+<pre><code>$ git add &lt;filename&gt;</code></pre>
+<p>Or for multiple files all at once:</p>
+<pre><code>$ git add --all</code></pre>
+<p>Or</p>
+<pre><code>$ git add .</code></pre>
+<p>To actually commit these changes (i.e. stage them), do the following:</p>
+<pre><code>$ git commit -m &quot;Helpful commit message!&quot;</code></pre>
+<p>Now the file(s) is commited to the HEAD, but not in your remote repo yet!</p>
+<h2 id="commit-synchronize">Commit &amp; Synchronize</h2>
+<p>Your changes are now in the HEAD of your local working copy of the repo. To send those changes to your remote repo, do this:</p>
+<pre><code>$ git push origin master</code></pre>
+<p>Change <em>master</em> to whichever branch you are wanting to push.</p>
+<p>If you have not yet connected your local repo with a remote repo, you can as follows:</p>
+<pre><code>$ git remote add origin &lt;server&gt;</code></pre>
+<p>This will connect them.</p>
+<p>N.B.: that’s <strong>NOT</strong> our typical workflow though!</p>
+<h2 id="branching">Branching</h2>
+<p>Branches are used to develop features isolated from each other. The <em>master</em> branch is the “default” branch when you first create a repo. You can use other branches for development and testing and then merge them back to the master branch once you have worked out more permanent features that you want to add.</p>
+<p>N.B.: draw picture!</p>
+<p>To create a new branch:</p>
+<pre><code>$ git checkout -b feature_x</code></pre>
+<p>To switch back to master:</p>
+<pre><code>$ git checkout master</code></pre>
+<p>You can delete the branch:</p>
+<pre><code>$ git branch -d feature_x</code></pre>
+<p>A branch on your local copy of the repo is not available to others unless you push it to the remote repo:</p>
+<pre><code>$ git push origin &lt;branch&gt;</code></pre>
+<h2 id="update-merge">Update &amp; Merge</h2>
+<p>To update your local repo to the latest commit:</p>
+<pre><code>$ git pull</code></pre>
+<p>This will <em>fetch</em> and <em>merge</em> remote changes.</p>
+<p>To merge another branch into your active branch (e.g. master), do:</p>
+<pre><code>$ git merge &lt;branch&gt;</code></pre>
+<p>Git is pretty smart and will attempt to auto-merge changes. Unfortunately, sometimes there will be <em>conflicts</em>. You are responsible to merge those conflicts manually by editing the files shown by git. After you do so:</p>
+<pre><code>$ git add &lt;filename&gt;</code></pre>
+<p>If you want to check for differences before merging, you can execute:</p>
+<pre><code>$ git diff &lt;source-branch&gt; &lt;target-branch&gt;</code></pre>
+<p>N.B.: also <code>$ git status</code> is your friend!</p>
