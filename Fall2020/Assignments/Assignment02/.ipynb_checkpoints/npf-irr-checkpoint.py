@@ -1,4 +1,6 @@
 import numpy as np
+import numpy_financial as npf
+
 
 def bond_factory(face: float, coupon: float, frequency: int, maturity: int) -> np.ndarray:
     the_bond = np.full(maturity * frequency, (coupon  * face) / frequency)
@@ -10,13 +12,15 @@ def bond_price(rate: float, the_bond: np.ndarray) -> float:
     return np.dot(disc, the_bond)
 
 
-## main
+## Main 
 face_value = 1000.0
-coupon_rate = .08
-frequency = 2
+coupon_rate = 0.08
+freq = 2
 maturity = 12
-ytm = .08 / frequency
+ytm = 0.075
 
-the_bond = bond_factory(face_value, coupon_rate, frequency, maturity)
-the_price = bond_price(ytm, the_bond)
-print(f"The bond price is: ${the_price:,.2f}")
+the_bond = bond_factory(face_value, coupon_rate, freq, maturity)
+the_price = bond_price(0.075/freq, the_bond)
+cash_flows = np.concatenate(([-the_price], the_bond), axis=None)
+the_yield = npf.irr(cash_flows)
+print(f"The YTM is: {the_yield * freq:.3f}")

@@ -7,15 +7,18 @@ def bond_factory(face: float, coupon: float, frequency: int, maturity: int) -> n
 
 def bond_price(rate: float, the_bond: np.ndarray) -> float:
     disc = np.array([1.0 / ((1.0 + rate) ** i) for i in range(1, the_bond.shape[0] + 1)])
-    return np.sum(disc * the_bond)
+    return np.dot(disc, the_bond)
+
+def bond_yield(....) -> float:
+    
 
 
 ## main
 face_value = 1000.0
-coupon_rate = .10
+coupon_rate = .08
 frequency = 2
-maturity = 20
-ytm = .12 / frequency
+maturity = 12
+ytm = .08 / frequency
 
 the_bond = bond_factory(face_value, coupon_rate, frequency, maturity)
 the_price = bond_price(ytm, the_bond)
