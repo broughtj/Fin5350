@@ -1,0 +1,91 @@
+---
+title: Finance 6470 - Derivatives Markets 
+subtitle: "Chapter 10: The Binomial Model"
+author: Tyler J. Brough
+institute: Department of Finance and Economics 
+titlegraphic: ./images/vertical-logo-blue.png
+fontsize: 10pt
+output:
+ beamer_presentation:
+    template: ./template.tex
+    keep_tex: false
+    toc: true
+make149: true
+---
+
+<style>
+slides > slide.backdrop {
+  background: white;
+  border-bottom: 0px;
+  box-shadow: 0 0 0;
+}
+
+
+slides > slide {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  border-bottom: 3px solid  #F66733;
+  box-shadow:  0 3px 0 #00488D;
+
+}
+
+.title-slide hgroup h1 {
+  color: #00488D;
+}
+
+
+
+h2 {
+
+  color: #00488D;
+}
+
+slides > slide.dark {
+  background: #00488D !important;
+  border-bottom: 0;
+  box-shadow: 0 0 0;
+}
+
+.segue h2 {
+  color: white;
+}
+
+slides > slide.title-slide {
+  border-bottom: 0;
+  box-shadow: 0 0 0;
+}
+
+ol, ul {
+
+padding-bottom: 10px;
+
+}
+
+</style>
+
+
+# Section 5.1 Alternative Ways to Buy a Stock 
+
+## Introduction
+
+- Financial futures and forwards
+	- On stocks and indexes
+	- On currencies
+	- On interest rates
+- How are they used?
+- How are they priced?
+- How are they hedged?
+
+
+$
+
+
+
+
+
+
+
+
+
+
+
+
