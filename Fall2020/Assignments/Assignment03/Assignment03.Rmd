@@ -1,0 +1,44 @@
+---
+title: "Assignment 03: The Single-Period Binomial Option Pricing Model"
+subtitle: "Finance 5350: Computational Finance"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+
+## Problems
+
+
+### __10.1__ 
+
+Let $S = \$100$, $K = \$105$, $r = 8\%$, $T = 0.5$, and $\delta = 0$ (i.e. no dividends). Let $u = 1.3$ and $d = 0.8$, and $n=1$.
+
+- __a.__ What are the premium, $\Delta$, and $B$ for a European call?
+
+- __b.__ What are the premium, $\Delta$, and $B$ for a European put?
+
+\vspace{3mm}
+
+
+### __10.2__
+
+Let $S = \$100$, $K = \$95$, $r = 8\%$, $T = 0.5$, and $\delta = 0$ (i.e. no dividends). Let $u = 1.3$, $d = 0.8$, and $n = 1$.
+
+- __a.__ Verify that the price of a European call is $\$16.196$.
+
+- __b.__ Suppose you observe a call price of $\$17$. What is the arbitrage?
+
+- __c.__ Suppose you observe a call price of $\$15.50$. What is the arbitrage?
+
+\vspace{3mm}
+
+### __10.3__ 
+
+Let $S = \$100$, $K = \$95$, $r = 8\%$, $T = 0.5$, and $\delta = 0$ (i.e. no dividends). Let $u = 1.3$, $d = 0.8$, and $n = 1$.
+
+- __a.__ Verify that the price of a European put is $\$7.471$.
+
+- __b.__ Suppose you observe a put price of $\$8$. What is the arbitrage?
+
+- __c.__ Suppose you observe a put price of $\$6$. What is the aribtrage?

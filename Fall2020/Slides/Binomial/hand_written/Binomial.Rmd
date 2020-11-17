@@ -1,0 +1,60 @@
+---
+title: 'Finance 5350: Derivatives Markets'
+subtitle: "Binomial Model Derivation"
+author: Tyler J. Brough
+institute: Department of Finance and Economics 
+titlegraphic: ./images/vertical-logo-blue.png
+fontsize: 10pt
+output:
+ beamer_presentation:
+    template: ./template.tex
+    keep_tex: false
+    toc: true
+make149: true
+---
+
+
+## Introduction
+
+What follows is a derivation of the single--period Binomial option pricing formula.
+This derivation is slightly different than the one found in your textbook.  I use different variable names than the text in order
+to be more consistent with the Black--Scholes model.
+
+
+## One-Period Trees
+
+To fix ideas, recall that our simple assumption of binomial prices leads to two
+binomial trees: one for the stock price, and one for the option price:
+
+
+## Stock Price Tree
+
+
+## Option Price Tree
+
+## The Replicating Portfolio Concept
+
+
+
+## Solving for $B$
+
+
+## Solving for $\Delta$ 
+
+
+
+## 
+
+
+
+## 
+
+
+
+## The No-Arbitrage Solution
+
+
+## The Risk-Neutral Representation 
+
+
+##
