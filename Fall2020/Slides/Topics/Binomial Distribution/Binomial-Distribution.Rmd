@@ -1,0 +1,19 @@
+---
+title: 'The Binomial Distribution'
+subtitle: 'Finance 5350: Computational Finance' 
+author: Tyler J. Brough
+institute: Department of Finance and Economics 
+titlegraphic: ./images/vertical-logo-blue.png
+fontsize: 10pt
+output:
+ beamer_presentation:
+    template: ./template.tex
+    keep_tex: false
+    toc: false
+make149: true
+---
+
+
+## Introduction
+
+In these slides...
