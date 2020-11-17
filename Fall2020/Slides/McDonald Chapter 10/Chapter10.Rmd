@@ -1,6 +1,6 @@
 ---
-title: Finance 6470 - Derivatives Markets 
-subtitle: "Chapter 10: The Binomial Model"
+title: "Binomial Option Pricing: Basic Principles"
+subtitle: "Financial 5350: Computational Finance"
 author: Tyler J. Brough
 institute: Department of Finance and Economics 
 titlegraphic: ./images/vertical-logo-blue.png
@@ -9,74 +9,202 @@ output:
  beamer_presentation:
     template: ./template.tex
     keep_tex: false
-    toc: true
+    toc: false
 make149: true
 ---
 
-<style>
-slides > slide.backdrop {
-  background: white;
-  border-bottom: 0px;
-  box-shadow: 0 0 0;
-}
+
+## Introduction to Binomial Option Pricing
+
+\underline{\phantom{}}
 
 
-slides > slide {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  border-bottom: 3px solid  #F66733;
-  box-shadow:  0 3px 0 #00488D;
+## A One-Period Binomial Tree
 
-}
-
-.title-slide hgroup h1 {
-  color: #00488D;
-}
+\underline{\phantom{}}
 
 
+## Computing the Option Price
 
-h2 {
-
-  color: #00488D;
-}
-
-slides > slide.dark {
-  background: #00488D !important;
-  border-bottom: 0;
-  box-shadow: 0 0 0;
-}
-
-.segue h2 {
-  color: white;
-}
-
-slides > slide.title-slide {
-  border-bottom: 0;
-  box-shadow: 0 0 0;
-}
-
-ol, ul {
-
-padding-bottom: 10px;
-
-}
-
-</style>
+\underline{\phantom{}}
 
 
-# Section 5.1 Alternative Ways to Buy a Stock 
+## Computing the Option Price Continued
 
-## Introduction
-
-- Financial futures and forwards
-	- On stocks and indexes
-	- On currencies
-	- On interest rates
-- How are they used?
-- How are they priced?
-- How are they hedged?
+\underline{\phantom{}}
 
 
-$
+## Computing the Option Price Continued
+
+\underline{\phantom{}}
+
+
+## The Bimonial Solution
+
+\underline{\phantom{}}
+
+
+## The Binomial Solution Continued
+
+
+
+## The Binomial Solution Continued
+
+
+
+## The Bimonial Solution Continued
+
+
+
+## Arbitraging a Mispriced Option
+
+
+
+## Risk-Neutral Pricing
+
+
+
+## Summary 
+
+
+
+## Continuously Compounded Returns
+
+
+
+## Volatility
+
+
+
+## The Standard Deviation of Continuously Compounded Returns Continued
+
+
+
+## Constructing $u$ and $d$
+
+
+
+## Constructing $u$ and $d$ Continued
+
+
+
+## Estimating Historical Volatility
+
+
+
+## Estimating Historical Volatility Continued
+
+
+
+## One-Period Example with a Forward Tree
+
+
+
+## One-Period Example with a Forward Tree Continued
+
+
+
+## A Two-Period European Call
+
+
+
+## A Two-Period European Call Continued
+
+
+
+## Pricing the Call Option
+
+
+
+## Pricing the Call Option Continued
+
+
+
+## Pricing the Call Option Continued
+
+
+
+## Many Binomial Periods
+
+
+
+## Many Bimonial Periods Continued
+
+
+
+## Many Bimonial Periods Continued
+
+
+
+## Put Options
+
+
+
+## Put Options Continued
+
+
+
+## American Options
+
+
+## American Options Continued
+
+
+
+## American Options Continued
+
+
+
+## American Options Continued
+
+
+
+## Options on Other Assets
+
+
+
+## Options on a Stock Index
+
+
+
+## Options on a Stock Index Continued
+
+
+## Options on Futures Contracts
+
+
+
+## Options on Futures Contracts Continued
+
+
+
+## Options on Futures Contracts Continued
+
+
+
+## Options on Futures Contracts Continued
+
+
+
+## Options on Commodities
+
+
+
+## Options on Bonds
+
+
+
+## Summary
+
+
+
+## 
+
+
+
+
+
+
 
 
 
