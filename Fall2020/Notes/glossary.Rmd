@@ -1,0 +1,9 @@
+---
+title: Glossary of Terms
+output: pdf_document
+---
+
+
+## __Arbitrage:__ 
+
+> The process of ...

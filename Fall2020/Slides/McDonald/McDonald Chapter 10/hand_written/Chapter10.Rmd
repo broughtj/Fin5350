@@ -9,39 +9,70 @@ output:
  beamer_presentation:
     template: ./template.tex
     keep_tex: false
-    toc: false
+    toc: true
 make149: true
 ---
 
 
+# Section 10.1: A One-Period Binomial Tree
+
 ## Introduction to Binomial Option Pricing
 
-\underline{\phantom{}}
+* The binomial option pricing model enables us to determine the price of an option, given the characteristics of the stock or other underlying asset
+
+* The binomial option pricing model assumes that the price of the underlying asset follows a binomial distribution - that is, the asset price in each Period
+  can move only up or down by a specified amount
+
+* The binomial model is often referred to as the "Cox-Ross-Rubinstein pricing model"
 
 
 ## A One-Period Binomial Tree
 
-\underline{\phantom{}}
+* Example
+    - Consider a European call option on the stock of XYZ, with a $\$40$ strike and 1 year to expiration
+    - XYZ does not pay dividends (i.e. $\delta =0$), and its current price is $S_{0} = \$41$
+    - The continuously compounded risk-free interest rate is $8\%$ (i.e. $r = 0.08$)
+    - The following is the corresponding binomial tree:
+
+\vspace{30mm}
+
+\phantom{}
 
 
 ## Computing the Option Price
 
-\underline{\phantom{}}
+* Next, consider two portfolios:
+    - _Portfolio A:_ buy one call option
+    - _Portfolio B:_ buy $2/3$ shares of XYZ and borrow $\$18.462$ at the risk-free rate, $r$
+
+\vspace{5mm}
+
+* Portfolio Costs:
+    - _Portfolio A:_ the call premium, __which is unknown and what we are solving for__
+    - _Portfolio B:_ $2/3 \times \$41 - \$19.462 = \$8.871$
+
 
 
 ## Computing the Option Price Continued
 
-\underline{\phantom{}}
 
 
 ## Computing the Option Price Continued
 
-\underline{\phantom{}}
+* Portfolios A and B have the same payoff. Therefore:
+    - Portfolios A and B should have the same cost. Since Portfolio B costs $\$8.871$, the price of on option must also be $\$8.871$
+    - There is a way to create the payoff to a call by buying shares and borrowing. Portfolio B is a _synthetic call_
+    - One option has the risk of $2/3$ shares. The value $2/3$ is the $delta$ ($\Delta$) of the option: the number of shares that replicates the option payoff
 
 
 ## The Bimonial Solution
 
-\underline{\phantom{}}
+* How do we find a replicating portfolio consisting of $\Delta$ shares of stock and a dollar amount $B$ in lending, such that the portfolio imitates the option
+  whether the stock or falls? 
+    - Suppose that the stock has a continuous dividend yield of $\delta$, which is reinvested in the stock. Thus, if you buy one share at time $t$, at time $t+h$
+      you will have $e^{\delta h}$ shares 
+    - If the length of a period is $h$, the interest factor per period is $e^{rh}$
+    - $uS$ denotes the stock price when the price goes up, and $dS$ denotes the stock price when the price goes down
 
 
 ## The Binomial Solution Continued
@@ -58,6 +89,12 @@ make149: true
 
 ## Arbitraging a Mispriced Option
 
+* If the observed option price differs from its theoretical price, arbitrage is possible:
+
+
+\vspace{40mm}
+
+\phantom{}
 
 
 ## Risk-Neutral Pricing
@@ -66,7 +103,20 @@ make149: true
 
 ## Summary 
 
+* In order to price an option, we need to know the following:
+    - Stock price ($S$)
+    - Strike price($K$)
+    - The expiration date of the options ($T$)
+    - Standard deviation of returns on the stock ($\sigma$)
+    - Divided yield ($\delta$)
+    - Risk-free rate ($r$)
 
+* Using the risk-free rate and $\sigma$, we can approximate the future distribution of the stock by creating a binomial tree using equation (10.9)
+
+* Once we have the binomial tree, it is possible to price the option using equation (10.3)
+
+
+# Section 10.2: Constructing A Binomial Tree
 
 ## Continuously Compounded Returns
 
@@ -104,6 +154,8 @@ make149: true
 
 
 
+# Section 10.3: Two Or More Binomial Periods
+
 ## A Two-Period European Call
 
 
@@ -135,6 +187,7 @@ make149: true
 ## Many Bimonial Periods Continued
 
 
+# Section 10.4: Put Options
 
 ## Put Options
 
@@ -143,6 +196,8 @@ make149: true
 ## Put Options Continued
 
 
+
+# Section 10.5: American Options
 
 ## American Options
 
@@ -158,6 +213,7 @@ make149: true
 ## American Options Continued
 
 
+# Section 10.6: Options on Other Assets
 
 ## Options on Other Assets
 
