@@ -9,7 +9,7 @@ output:
  beamer_presentation:
     template: ./template.tex
     keep_tex: false
-    toc: true
+    toc: false
 make149: true
 ---
 
