@@ -55,7 +55,9 @@ make149: true
 
 ## Computing the Option Price Continued
 
+* Payoffs:
 
+\vspace{55mm}
 
 ## Computing the Option Price Continued
 
@@ -77,28 +79,96 @@ make149: true
 
 ## The Binomial Solution Continued
 
+\vspace{45mm}
 
+* The value of the replicating portfolio at time $h$, with stock price $S_{h}$, is
+
+$$
+\Delta S_{h} e^{\delta h} + e^{rh}B
+$$
 
 ## The Binomial Solution Continued
 
+* At the prices $S_{h} = uS$ and $S_{h} = dS$, a successful replicating portfolio will satisfy
+
+$$
+\begin{aligned}
+(\Delta \times uS \times e^{\delta h}) + (B \times e^{rh}) &= C_{u} \\
+(\Delta \times dS \times e^{\delta h}) + (B \times e^{rh}) &= C_{d}
+\end{aligned}
+$$
+
+
+* Solving for $\Delta$ and $B$ gives
+
+$$
+\begin{aligned}
+\Delta &= e^{-\delta h} \left(\frac{C_{u} - C_{d}}{S(u - d)} \right) \\
+& \\
+B &= e^{-rh} \left(\frac{uC_{d} - dC_{u}}{u - d} \right)
+\end{aligned}
+$$
+
+\tiny \textbf{NB:} Please see notes on the full algebraic derivation.
 
 
 ## The Bimonial Solution Continued
 
+* The cost of creating the option is the net cash flow required to buy the shares and bonds.
+  Thus, the cost of the option is $\Delta S + B$
+
+$$
+\Delta S + B = e^{-rh}\left(C_{u} \frac{e^{(r - \delta) h} - d}{u-d} + C_{d} \frac{u - e^{(r - \delta) h}}{u-d} \right)
+$$
+
+\vspace{10mm}
+
+* The no-arbitrage condition is
+
+$$
+d < e^{(r - \delta) h} < u
+$$
 
 
 ## Arbitraging a Mispriced Option
 
-* If the observed option price differs from its theoretical price, arbitrage is possible:
+If the observed option price differs from its theoretical price, arbitrage is possible:
+
+\vspace{3mm}
+
+- If an option is overpriced, we can sell the option. However, the risk is that the option will be in the 
+  money at expiration, and we will be required to deliver the stock. To hedge this risk, we can buy
+  a synthetic option at the same time we sell the actual option
+
+\vspace{3mm} 
+
+- If an option is underpriced, we buy the option. To hedge the risk associated with the possibility of
+  the stock price falling at expiration, we sell a synthetic option at the same time
 
 
-\vspace{40mm}
+## Arbitraging a Mispriced Option Continued
 
 \phantom{}
 
 
 ## Risk-Neutral Pricing
 
+* We can interpret the terms $\frac{(e^{(r - \delta) h} - d)}{(u-d)}$ and 
+  $\frac{(u - e^{(r - \delta) h})}{u-d}$ as probabilities
+
+* Let 
+
+$$
+p^{\ast} = \frac{e^{(r - \delta) h} -d}{u - d}
+$$
+
+* Then equation (10.3) can then be written as 
+
+$$
+C_{0} = e^{-rh} [p^{\ast}C_{u} + (1 - p^{\ast})C_{d}]
+$$
+
+* We call $p^{\ast}$ the \textbf{risk-neutral probability} of an increase in the stock price
 
 
 ## Summary 
