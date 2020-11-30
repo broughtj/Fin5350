@@ -1,0 +1,97 @@
+---
+bibliography: biblio.bib
+output:
+  pdf_document: default
+  html_document: default
+header-includes:
+   - \usepackage{setspace}
+   - \doublespacing
+fontsize: 11pt
+indent: false
+---
+
+
+## __Finance 5350 Class Notes__
+
+## __Topic: The Bernoulli and Binomial Distributions__
+
+\vspace{10mm}
+
+
+## Introduction
+
+This note is a brief review of concepts from discrete probability. We will cover the definition of a _dicrete random variable_ and 
+then turn our attention to a discrete probability distribution called the _Bernoulli Distribution_ as well as its generalization
+in the _Binomial Distribution_. 
+
+These notes are based on the presentation in @BainEngelhardt1992.
+
+
+## Discrete Random Variables
+
+\vspace{2.5mm}
+
+__Definition: Discrete Random Variable__
+
+If the set of all possible values of a random variable, $X$, is a countable set, $x_{1}, x_{2}, \ldots, x_{n}$, our
+$x_{1}, x_{2}, \ldots$, then $X$ is called a __discrete random variable__. The function
+
+$$
+f(x) = P[X = x] \quad\quad x = x_{1}, x_{2}, \ldots
+$$
+
+that assigns the probability to each possible value $x$ will be called the __discrete probability density function__ (discrete pdf).
+
+
+\vspace{20mm}
+
+__Definition: The Bernoulli Distribution__
+
+A random variable , $X$, that assumes only the values $0$ and $1$ is known as a __Bernoulli variable__, and a performance of an 
+experiment with only two types of outcomes is called a __Bernoulli trial__. In particular, if an experiment can result only in 
+"success" ($E$) or "failure" ($E^{\prime}$), then the corresponding Bernoulli variable is 
+
+$$
+X(e) = 
+\begin{cases}
+1 \quad \mbox{if} \quad e \in E,         \\
+0 \quad \mbox{if} \quad e \in E^{\prime}
+\end{cases}
+$$
+
+The pdf of $X$ is given by $f(0) = 1 - \theta$ and $f(1) = \theta$. The corresponding distribution is known as a __Bernoulli distribution__,
+and its pdf can be expressed as 
+
+$$
+f(x) = \theta^{x}(1 - \theta)^{1-x} \quad \quad x = 0, 1
+$$
+
+
+\vspace{10mm}
+
+__Example: Drawing Marbles at Random__
+
+Consider drawing marbles at random from a collection of $10$ black and $20$ white marbles. In such a problem, we might regard
+"black" as success and "white" as failure, or vice versa, in a single draw. If obtaining a black marble is regarded as success, 
+then $\theta = 10/30 = 1/3$ and $1 - \theta = 20/30 = 2/3$.
+
+\vspace{10mm}
+
+
+__The Single-Period Binomial Model__
+
+Recall that in the single-period binomial option pricing model we could express it in its risk-neutral form as follows
+
+$$
+f_{0} = e^{-r h} [f_{u} p^{\ast} + f_{d} (1 - p^{\ast})]
+$$
+
+where $f_{0}$ is value of the option (call or put) and $f_{u}$ is the value of the option in the up state and $f_{d}$ is the value of the option
+in the down state. Finally, $p^{\ast} = \frac{e^{(r h)} - u}{u - d}$ was called the ___risk-neutral probability___. 
+
+
+
+
+
+## References
+
