@@ -1,0 +1,47 @@
+---
+title: "FIN 5350 - Final Project"
+author: "Tyler J. Brough"
+date: "December 7, 2020"
+output:
+  html_document:
+    theme: united
+    highlight: tango
+    df_print: paged
+  pdf_document:
+    highlight: tango 
+---
+
+```{r setup, include=FALSE}
+library(reticulate)
+use_python("/home/jicker/anaconda3/bin/python")
+```
+
+
+## __Preliminary__ 
+
+<br>
+
+\vspace{3mm}
+
+In this final project you will write a Python module in the file `options.py` that you will call from various Jupyter notebooks that will contain answers to the problems below.  
+
+<br>
+
+You should begin your module with the following header:
+
+```{python.reticulate=FALSE}
+import numpy as np
+```
+
+
+## __Problem 1__
+
+
+
+## __Problem 2__
+
+
+## __Problem 3__
+
+
+
