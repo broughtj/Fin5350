@@ -1,22 +1,9 @@
----
-title: "Final Project"
-output:
-  html_document:
-    theme: united
-    highlight: tango
-    df_print: paged
-  pdf_document:
-    highlight: tango 
----
+## Finance 5350: Computational Financial Modeling
+### __Final Project__
 
-```{r setup, include=FALSE}
-library(reticulate)
-use_python("/home/jicker/anaconda3/bin/python")
-```
+<br>
 
-__Finance 5350: Computational Financial Modeling__ <br>
-
-__Due Date:__ December 18, 2020 at Midnight <br>
+**Due Date:** December 18, 2020 at Midnight
 
 <br>
 
