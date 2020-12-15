@@ -166,3 +166,17 @@ Write a Jupyter notebook named `PartThree.ipynb` to solve the following problems
 
 <br>
 <br>
+
+### __Extra Credit__
+
+* __Set-up:__ Let $S_{0} = \$41.0$, $K = \$40.0$, $T = 1$ year, $\sigma = 30\%$ per annum, $r = 8\%$ per annum, $\delta = 0$.
+* Price both European call and put options with the Black-Scholes model and the European Binomial model with $n = 200$ time steps. 
+* Now write a function that prices the European call and put via Monte Carlo simulation.
+    - The solution should use your binomial path simulation to simulate $M = 10,000$ simulated paths through the tree. 
+    - This will give you $M$ different terminal stock prices.
+    - Get the corresponding option payoffs using the payoff function. 
+    - Take an average of the option payoffs with the Numpy method `np.mean`.
+    - Discount this value to time zero and compare it with the Black-Scholes and European Binomial model prices. 
+    - Also calculate the standard error of the simulation with `np.std` and divide by `np.sqrt(M)`.
+    - Repeat for $M = 25,000; 50,000; 75,000; \mbox{and}; 100,000$.
+    - Make a table to report the data (both discounted mean and standard errors). 
